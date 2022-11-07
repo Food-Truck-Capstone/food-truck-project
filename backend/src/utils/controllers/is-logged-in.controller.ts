@@ -2,16 +2,16 @@ import { NextFunction, Request, Response } from 'express'
 import { verify, VerifyErrors } from 'jsonwebtoken'
 import { Status } from '../interfaces/Status'
 import { IncomingHttpHeaders } from 'http'
-import { Profile } from '../models/Profile'
+import { Owner } from '../models/Owner'
 
 export function isLoggedInController (request: Request, response: Response, next: NextFunction): any {
   const status: Status = { status: 400, message: 'Please login', data: null }
 
-  const sessionProfile = (request: Request): Profile | undefined => request.session?.profile ?? undefined
+  const sessionProfile = (request: Request): Owner | undefined => request.session?.profile ?? undefined
 
   const signature = (request: Request): string => request.session?.signature ?? 'no signature'
 
-  const isSessionActive = (isProfileActive: Profile | undefined): boolean => (isProfileActive !== undefined)
+  const isSessionActive = (isProfileActive: Owner | undefined): boolean => (isProfileActive !== undefined)
 
   const getJwtTokenFromHeader = (headers: IncomingHttpHeaders): string | undefined => {
     return headers.authorization
