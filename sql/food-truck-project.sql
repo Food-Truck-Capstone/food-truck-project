@@ -56,6 +56,7 @@ CREATE TABLE favorites (
     PRIMARY KEY(favorite_truck_id, favorite_customer_id),
     FOREIGN KEY (favorite_truck_id) REFERENCES truck (truck_id),
     FOREIGN KEY (favorite_customer_id) REFERENCES customer (customer_id)
+
 );
 CREATE INDEX ON favorites (favorite_truck_id);
 CREATE INDEX ON favorites (favorite_customer_id);
