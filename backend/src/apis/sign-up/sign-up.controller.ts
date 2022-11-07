@@ -3,7 +3,7 @@ import { Request, Response } from 'express'
 import { setHash } from '../../utils/auth.utils'
 import { Status } from '../../utils/interfaces/Status'
 
-import { insertProfile, Profile } from '../../utils/models/Profile'
+import { insertOwner, Owner } from '../../utils/models/Owner'
 
 /**
  * Express controller that creates a profile object and inserts it into the database when the endpoint POST apis/sign-up/ is called
@@ -13,22 +13,22 @@ import { insertProfile, Profile } from '../../utils/models/Profile'
  */
 export async function signUpController (request: Request, response: Response): Promise<Response | undefined> {
   try {
-    const { profileName, profileAboutMe, profileEmail, profilePassword } = request.body
-    const profileHash = await setHash(profilePassword)
+    const { ownerName, ownerPhone, ownerEmail, ownerPassword } = request.body
+    const ownerHash = await setHash(ownerPassword)
 
-    const profile: Profile = {
-      profileId: null,
-      profileAboutMe,
-      profileEmail,
-      profileHash,
-      profileName
+    const owner: Owner = {
+      ownerId: null,
+      ownerName,
+      ownerPhone,
+      ownerEmail,
+      ownerHash,
 
     }
-    await insertProfile(profile)
+    await insertOwner(owner)
 
     const status: Status = {
       status: 200,
-      message: 'Profile successfully created please check your email.',
+      message: 'Owner successfully created please check your email.',
       data: null
     }
 

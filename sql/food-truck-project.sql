@@ -11,7 +11,6 @@ CREATE TABLE owner (
     owner_phone VARCHAR(32) NOT NULL UNIQUE,
     owner_email VARCHAR(64) NOT NULL UNIQUE,
     owner_hash CHAR(97) NOT NULL,
-    profile_phone VARCHAR(32),
     owner_activation_token CHAR(32) NOT NULL
 );
 

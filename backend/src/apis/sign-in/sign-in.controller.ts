@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import 'express-session'
 import { v4 as uuid } from 'uuid'
 import { generateJwt, validatePassword } from '../../utils/auth.utils'
-import { Profile, selectProfileByProfileEmail } from '../../utils/models/Profile'
+import { Owner, selectProfileByProfileEmail } from '../../utils/models/Owner'
 
 /**
  * Express controller that handles signing in users when the endpoint POST apis/sign-in/ is called
@@ -36,10 +36,10 @@ function signInFailed (response: Response): Response {
  * helper function that creates a jwt token, sets it to the authorization header in the response  and attaches a success message, related to signing in, to the response.
  * @param request  An object modeling the current request provided by Express.
  * @param response an object modeling the response that will be sent to the client.
- * @param profile Profile object of the person who just logged in
+ * @param profile Owner object of the person who just logged in
  * @return express response object with the client status object set in json and an authorization header
  **/
-function signInSuccessful (request: Request, response: Response, profile: Profile): Response {
+function signInSuccessful (request: Request, response: Response, profile: Owner): Response {
   const { profileId, profileName, profileEmail } = profile
   const signature: string = uuid()
   const authorization: string = generateJwt({
