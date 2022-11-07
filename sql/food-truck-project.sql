@@ -50,7 +50,6 @@ CREATE TABLE menu (
 CREATE INDEX ON menu (menu_truck_id);
 
 
-
 CREATE TABLE favorites (
     favorite_truck_id UUID NOT NULL,
     favorite_customer_id UUID NOT NULL,
@@ -60,6 +59,3 @@ CREATE TABLE favorites (
 );
 CREATE INDEX ON favorites (favorite_truck_id);
 CREATE INDEX ON favorites (favorite_customer_id);
-
--- WHAT DO WE PUT FOR LAT LNG, ACTIVATION TOKENS, AND IMG URL?
--- CONFIGURE DATA SOURCE NOT WORKING???
