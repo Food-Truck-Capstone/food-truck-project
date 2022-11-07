@@ -1,4 +1,5 @@
 
+
 DROP TABLE IF EXISTS favorites;
 DROP TABLE IF EXISTS menu;
 DROP TABLE IF EXISTS truck;
@@ -57,9 +58,9 @@ CREATE TABLE favorites (
     PRIMARY KEY(favorite_truck_id, favorite_customer_id),
     FOREIGN KEY (favorite_truck_id) REFERENCES truck (truck_id),
     FOREIGN KEY (favorite_customer_id) REFERENCES customer (customer_id)
+
 );
 CREATE INDEX ON favorites (favorite_truck_id);
 CREATE INDEX ON favorites (favorite_customer_id);
 
--- WHAT DO WE PUT FOR LAT LNG, ACTIVATION TOKENS, AND IMG URL?
--- CONFIGURE DATA SOURCE NOT WORKING???
+
