@@ -1,7 +1,7 @@
 import { Schema } from 'express-validator'
 
 export const signUpValidator: Schema = {
-  profileAboutMe: {
+  ownerPhone: {
     escape: true,
     trim: true,
     optional: {
@@ -11,11 +11,11 @@ export const signUpValidator: Schema = {
 
     },
     isLength: {
-      errorMessage: 'profile about me must be between one and thirty two characters',
-      options: { min: 1, max: 512 }
+      errorMessage: 'Phone number must be between one and thirty two characters',
+      options: { min: 1, max: 32 }
     }
   },
-  profileEmail: {
+  ownerEmail: {
     isEmail: {
       errorMessage: 'Please provide a valid email'
     },
@@ -23,14 +23,14 @@ export const signUpValidator: Schema = {
     // normalizeEmail: true,
     trim: true
   },
-  profilePassword: {
+  ownerPassword: {
     isLength: {
       errorMessage: 'Password must be at least eight characters',
       options: { min: 8, max: 200 }
     }
 
   },
-  profilePasswordConfirm: {
+  ownerPasswordConfirm: {
     isLength: {
       errorMessage: 'Confirm password must be at least eight characters',
       options: { min: 8, max: 200 }
@@ -38,7 +38,7 @@ export const signUpValidator: Schema = {
     custom: {
       errorMessage: 'Password confirmation does not match password',
       options: (value, { req, location, path }) => {
-        if (value !== req.body.profilePassword) {
+        if (value !== req.body.ownerPassword) {
           throw new Error('Password confirmation does not match password')
         }
 
@@ -47,12 +47,12 @@ export const signUpValidator: Schema = {
       }
     }
   },
-  profileName: {
+  ownerName: {
     escape: true,
     trim: true,
     isLength: {
-      errorMessage: 'profile name must be between one and thirty two characters',
-      options: { min: 1, max: 32 }
+      errorMessage: 'Name must be between one and sixty four characters',
+      options: { min: 1, max: 64 }
     }
   }
 }

@@ -6,7 +6,7 @@ import { Status } from '../../utils/interfaces/Status'
 import { insertOwner, Owner } from '../../utils/models/Owner'
 
 /**
- * Express controller that creates a profile object and inserts it into the database when the endpoint POST apis/sign-up/ is called
+ * Express controller that creates an owner object and inserts it into the database when the endpoint POST apis/sign-up/ is called
  * @param request  An object modeling the current request provided by Express.
  * @param response an object modeling the response that will be sent to the client.
  * @return A promise containing a status object with either a success or failure message set to the message field

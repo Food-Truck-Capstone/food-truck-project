@@ -7,11 +7,11 @@ import { Owner } from '../models/Owner'
 export function isLoggedInController (request: Request, response: Response, next: NextFunction): any {
   const status: Status = { status: 400, message: 'Please login', data: null }
 
-  const sessionProfile = (request: Request): Owner | undefined => request.session?.profile ?? undefined
+  const sessionOwner = (request: Request): Owner | undefined => request.session?.owner ?? undefined
 
   const signature = (request: Request): string => request.session?.signature ?? 'no signature'
 
-  const isSessionActive = (isProfileActive: Owner | undefined): boolean => (isProfileActive !== undefined)
+  const isSessionActive = (isOwnerActive: Owner | undefined): boolean => (isOwnerActive !== undefined)
 
   const getJwtTokenFromHeader = (headers: IncomingHttpHeaders): string | undefined => {
     return headers.authorization
@@ -42,8 +42,8 @@ export function isLoggedInController (request: Request, response: Response, next
     return result as boolean
   }
 
-  if (isJwtValid(unverifiedJwtToken) && isSessionActive(sessionProfile(request))) {
+  if (isJwtValid(unverifiedJwtToken) && isSessionActive(sessionOwner(request))) {
     return next()
   }
-  isJwtValid(unverifiedJwtToken) && isSessionActive(sessionProfile(request)) ? next() : response.json(status)
+  isJwtValid(unverifiedJwtToken) && isSessionActive(sessionOwner(request)) ? next() : response.json(status)
 }
