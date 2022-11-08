@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import 'express-session'
 import { v4 as uuid } from 'uuid'
 import { generateJwt, validatePassword } from '../../utils/auth.utils'
-import { Owner, selectProfileByProfileEmail } from '../../utils/models/Owner'
+import { Owner, selectOwnerByOwnerEmail } from '../../utils/models/Owner'
 
 /**
  * Express controller that handles signing in users when the endpoint POST apis/sign-in/ is called
@@ -12,11 +12,11 @@ import { Owner, selectProfileByProfileEmail } from '../../utils/models/Owner'
  */
 export async function signInController (request: Request, response: Response): Promise<Response> {
   try {
-    const { profileEmail, profilePassword } = request.body
-    const profile = await selectProfileByProfileEmail(profileEmail)
+    const { ownerEmail, ownerPassword } = request.body
+    const owner = await selectOwnerByOwnerEmail(ownerEmail)
 
-    return (profile !== null) && await validatePassword(profile.profileHash, profilePassword)
-      ? signInSuccessful(request, response, profile)
+    return (owner !== null) && await validatePassword(owner.ownerHash, ownerPassword)
+      ? signInSuccessful(request, response, owner)
       : signInFailed(response)
   } catch (error: any) {
     return response.json({ status: 500, data: null, message: error.message })
@@ -36,19 +36,19 @@ function signInFailed (response: Response): Response {
  * helper function that creates a jwt token, sets it to the authorization header in the response  and attaches a success message, related to signing in, to the response.
  * @param request  An object modeling the current request provided by Express.
  * @param response an object modeling the response that will be sent to the client.
- * @param profile Owner object of the person who just logged in
+ * @param owner Owner object of the person who just logged in
  * @return express response object with the client status object set in json and an authorization header
  **/
-function signInSuccessful (request: Request, response: Response, profile: Owner): Response {
-  const { profileId, profileName, profileEmail } = profile
+function signInSuccessful (request: Request, response: Response, owner: Owner): Response {
+  const { ownerId, ownerName, ownerEmail } = owner
   const signature: string = uuid()
   const authorization: string = generateJwt({
-    profileId,
-    profileName,
-    profileEmail
+    ownerId,
+    ownerName,
+    ownerEmail
   }, signature)
 
-  request.session.profile = profile
+  request.session.owner = owner
   request.session.jwt = authorization
   request.session.signature = signature
 
