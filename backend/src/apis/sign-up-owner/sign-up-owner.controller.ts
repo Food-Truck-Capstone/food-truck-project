@@ -6,7 +6,7 @@ import { insertOwner, Owner } from '../../utils/models/Owner'
 import {Status} from "../../utils/interfaces/Status";
 
 
-export async function signUpController (request: Request, response: Response): Promise<Response | undefined> {
+export async function signUpOwnerController (request: Request, response: Response): Promise<Response | undefined> {
   try {
 
     const mailGun = new Mailgun(formData)

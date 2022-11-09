@@ -1,6 +1,6 @@
 import { Schema } from 'express-validator'
 
-export const signUpValidator: Schema = {
+export const signUpOwnerValidator: Schema = {
   ownerPhone: {
     escape: true,
     trim: true,

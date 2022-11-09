@@ -5,8 +5,11 @@ import { indexRoute } from './apis/index.route'
 import session from 'express-session'
 import { createClient } from 'redis'
 import RedisConnect from 'connect-redis'
-import { signInRoute } from './apis/sign-in/sign-in.route'
-import { signUpRoute } from './apis/sign-up/sign-up.route'
+import {signInOwnerRoute} from "./apis/sign-in-owner/sign-in-owner.route";
+import {signUpOwnerRoute} from "./apis/sign-up-owner/sign-up-owner.route";
+import {signInCustomerRoute} from "./apis/sign-in-customer/sign-in-customer.route";
+import {signUpCustomerRoute} from "./apis/sign-up-customer/sign-up-customer.route";
+
 
 const redisClient = createClient({ legacyMode: true, socket: { host: process.env.REDIS_HOST } })
 redisClient.connect().catch(console.error)
@@ -49,8 +52,10 @@ export class App {
 
   private routes (): void {
     this.app.use('/apis', indexRoute)
-    this.app.use('/apis/sign-in', signInRoute)
-    this.app.use('/apis/sign-up', signUpRoute)
+    this.app.use('/apis/sign-in-owner', signInOwnerRoute)
+    this.app.use('/apis/sign-up-owner', signUpOwnerRoute)
+    this.app.use('/apis/sign-in-customer', signInCustomerRoute)
+    this.app.use('/apis/sign-up-customer', signUpCustomerRoute)
   }
 
   // starts the server and tells the terminal to post a message that the server is running and on what port

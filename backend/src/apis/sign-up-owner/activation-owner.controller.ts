@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express'
 import { Owner, selectOwnerByOwnerActivationToken, updateOwner } from '../../utils/models/Owner'
 import { Status } from '../../utils/interfaces/Status'
 
-export async function activationController (request: Request, response: Response, nextFunction: NextFunction): Promise<Response<Status>> {
+export async function activationOwnerController (request: Request, response: Response, nextFunction: NextFunction): Promise<Response<Status>> {
     try {
         const { activation } = request.params
         const owner = await selectOwnerByOwnerActivationToken(activation)
