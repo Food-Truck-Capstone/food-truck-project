@@ -11,7 +11,7 @@ export interface Owner {
 }
 
 export interface PartialOwner {
-  ownerId: string | null,
+  ownerId: string|null,
   ownerName: string,
   ownerPhone: string,
   ownerEmail: string,
@@ -41,7 +41,7 @@ export async function selectOwnerByOwnerEmail (ownerEmail: string): Promise<Owne
   return result?.length === 1 ? result[0] : null
 }
 
-export async function selectOwnerByOwnerActivationToken (ownerActivationToken: string): Promise<PartialOwner|null> {
+export async function selectOwnerByOwnerActivationToken (ownerActivationToken: string): Promise<Owner|null> {
   const result = await sql<Owner[]>`SELECT owner_id, owner_phone, owner_email, owner_name from owner WHERE owner_activation_token = ${ownerActivationToken}`
   return result?.length === 1 ? result[0] : null
 }
