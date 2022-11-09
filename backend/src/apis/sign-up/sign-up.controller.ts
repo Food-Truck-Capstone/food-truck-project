@@ -1,34 +1,39 @@
-import { Request, Response } from 'express'
-// DB
-import { setHash } from '../../utils/auth.utils'
-import { Status } from '../../utils/interfaces/Status'
-
+import { Request, Response } from 'express';
+import Mailgun from "mailgun.js";
+import formData from 'form-data'
+import {setActivationToken, setHash} from '../../utils/auth.utils'
 import { insertOwner, Owner } from '../../utils/models/Owner'
+import {Status} from "../../utils/interfaces/Status";
 
-/**
- * Express controller that creates an owner object and inserts it into the database when the endpoint POST apis/sign-up/ is called
- * @param request  An object modeling the current request provided by Express.
- * @param response an object modeling the response that will be sent to the client.
- * @return A promise containing a status object with either a success or failure message set to the message field
- */
+
 export async function signUpController (request: Request, response: Response): Promise<Response | undefined> {
   try {
-    const { ownerName, ownerPhone, ownerEmail, ownerPassword } = request.body
+
+    const mailGun = new Mailgun(formData)
+    const mailGunClient = mailGun.client({username:'api', key:process.env.MAILGUN_API_KEY as string})
+    const { ownerName, ownerPhone, ownerEmail, ownerPassword, ownerPasswordConfirm } = request.body
     const ownerHash = await setHash(ownerPassword)
-
-    const owner: Owner = {
-      ownerId: null,
-      ownerName,
-      ownerPhone,
-      ownerEmail,
-      ownerHash,
-
+    const ownerActivationToken = setActivationToken()
+    const basePath: string = `${request.protocol}://${request.hostname}/${request.originalUrl}/activation/${ownerActivationToken}`
+    const message = `<h2>Welcome to Food Truck.</h2>
+    <p>Please confirm your email address before continuing </p>
+    <p><a href="${basePath}">${basePath}</a></p>
+`
+    const mailgunMessage = {
+      from: `Mailgun Sandbox <postmaster@${process.env.MAILGUN_DOMAIN as string}>`,
+      to: ownerEmail,
+      subject: 'One step closer to Sticky Head -- Account Activation',
+      html: message
     }
+
+    const owner: Owner = { ownerId: null, ownerName, ownerPhone, ownerEmail, ownerHash, ownerActivationToken }
+
     await insertOwner(owner)
+    await mailGunClient.messages.create(process.env.MAILGUN_DOMAIN as string, mailgunMessage)
 
     const status: Status = {
       status: 200,
-      message: 'Owner successfully created please check your email.',
+      message: 'Profile successfully created please check your email.',
       data: null
     }
 

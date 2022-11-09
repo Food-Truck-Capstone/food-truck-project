@@ -8,10 +8,10 @@ DROP TABLE IF EXISTS owner;
 CREATE TABLE owner (
     owner_id UUID NOT NULL PRIMARY KEY,
     owner_name VARCHAR(64) NOT NULL,
-    owner_phone VARCHAR(32) NOT NULL UNIQUE,
+    owner_phone VARCHAR(32) NOT NULL,
     owner_email VARCHAR(64) NOT NULL UNIQUE,
     owner_hash CHAR(97) NOT NULL,
-    owner_activation_token CHAR(32) NOT NULL
+    owner_activation_token CHAR(32)
 );
 
 
