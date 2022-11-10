@@ -19,8 +19,8 @@ export interface PartialOwner {
 
 
 export async function insertOwner (owner: Owner): Promise<string> {
-  const { ownerName, ownerPhone, ownerEmail, ownerHash } = owner
-   await sql`INSERT INTO owner (owner_id, owner_name, owner_phone, owner_email, owner_hash) VALUES(gen_random_uuid(), ${ownerName}, ${ownerPhone}, ${ownerEmail}, ${ownerHash})`
+  const { ownerName, ownerPhone, ownerEmail, ownerHash,ownerActivationToken } = owner
+   await sql`INSERT INTO owner (owner_id, owner_name, owner_phone, owner_email, owner_hash, owner_activation_token) VALUES(gen_random_uuid(), ${ownerName}, ${ownerPhone}, ${ownerEmail}, ${ownerHash}, ${ownerActivationToken})`
   return 'Owner successfully created'
 }
 

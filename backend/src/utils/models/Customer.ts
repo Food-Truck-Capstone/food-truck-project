@@ -19,8 +19,8 @@ export interface PartialCustomer {
 
 
 export async function insertCustomer (customer: Customer): Promise<string> {
-  const { customerName, customerPhone, customerEmail, customerHash } = customer
-   await sql`INSERT INTO customer (customer_id, customer_name, customer_phone, customer_email, customer_hash) VALUES(gen_random_uuid(), ${customerName}, ${customerPhone}, ${customerEmail}, ${customerHash})`
+  const { customerName, customerPhone, customerEmail, customerHash, customerActivationToken } = customer
+   await sql`INSERT INTO customer (customer_id, customer_name, customer_phone, customer_email, customer_hash, customer_activation_token) VALUES(gen_random_uuid(), ${customerName}, ${customerPhone}, ${customerEmail}, ${customerHash}, ${customerActivationToken})`
   return 'Customer successfully created'
 }
 

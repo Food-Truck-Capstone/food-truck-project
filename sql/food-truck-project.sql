@@ -1,5 +1,5 @@
 
-DROP TABLE IF EXISTS favorites;
+DROP TABLE IF EXISTS favorite;
 DROP TABLE IF EXISTS menu;
 DROP TABLE IF EXISTS truck;
 DROP TABLE IF EXISTS customer;
@@ -49,7 +49,7 @@ CREATE TABLE menu (
 CREATE INDEX ON menu (menu_truck_id);
 
 
-CREATE TABLE favorites (
+CREATE TABLE favorite (
     favorite_truck_id UUID NOT NULL,
     favorite_customer_id UUID NOT NULL,
     PRIMARY KEY(favorite_truck_id, favorite_customer_id),
@@ -57,5 +57,5 @@ CREATE TABLE favorites (
     FOREIGN KEY (favorite_customer_id) REFERENCES customer (customer_id)
 
 );
-CREATE INDEX ON favorites (favorite_truck_id);
-CREATE INDEX ON favorites (favorite_customer_id);
+CREATE INDEX ON favorite (favorite_truck_id);
+CREATE INDEX ON favorite (favorite_customer_id);
