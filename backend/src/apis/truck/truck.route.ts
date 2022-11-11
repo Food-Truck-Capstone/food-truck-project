@@ -1,10 +1,5 @@
 import { Router } from 'express'
-import {
-    getAllTrucks,
-    getTruckByTruckId,
-    getTrucksByTruckOwnerId,
-    postTruck
-} from './truck.controller'
+import { getAllTrucks, getTruckByTruckId, getTrucksByTruckOwnerId, postTruck } from './truck.controller'
 import { asyncValidatorController } from '../../utils/controllers/async-validator.controller'
 import { check, checkSchema } from 'express-validator'
 import { isLoggedInController } from "../../utils/controllers/is-logged-in.controller"

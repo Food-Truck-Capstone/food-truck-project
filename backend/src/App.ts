@@ -9,6 +9,8 @@ import {signInOwnerRoute} from "./apis/sign-in-owner/sign-in-owner.route";
 import {signUpOwnerRoute} from "./apis/sign-up-owner/sign-up-owner.route";
 import {signInCustomerRoute} from "./apis/sign-in-customer/sign-in-customer.route";
 import {signUpCustomerRoute} from "./apis/sign-up-customer/sign-up-customer.route";
+import {postTruck} from "./apis/truck/truck.controller";
+import TruckRoute from "./apis/truck/truck.route";
 
 
 const redisClient = createClient({ legacyMode: true, socket: { host: process.env.REDIS_HOST } })
@@ -56,6 +58,7 @@ export class App {
     this.app.use('/apis/sign-up-owner', signUpOwnerRoute)
     this.app.use('/apis/sign-in-customer', signInCustomerRoute)
     this.app.use('/apis/sign-up-customer', signUpCustomerRoute)
+    this.app.use('/apis/truck', TruckRoute)
   }
 
   // starts the server and tells the terminal to post a message that the server is running and on what port

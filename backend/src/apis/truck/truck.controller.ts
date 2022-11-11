@@ -48,18 +48,13 @@ export async function getTruckByTruckId (request: Request, response: Response, n
 
 export async function postTruck (request: Request, response: Response): Promise<Response<Status>> {
     try {
-        const { truckId, truckCardAccepted, truckFoodType } = request.body
+
         const owner: Owner = request.session.owner as Owner
         const truckOwnerId: string = owner.ownerId as string
 
-        const truck: Truck = {
-            truckId,
-            truckOwnerId,
-            truckCardAccepted,
-            truckFoodType,
-            truckLat: null,
-            truckLng: null,
-        }
+        const { truckId, truckName, truckCardAccepted, truckFoodType } = request.body
+
+        const truck: Truck = { truckId: null, truckOwnerId, truckName, truckCardAccepted, truckFoodType, truckLat: null, truckLng: null }
         const result = await insertTruck(truck)
         const status: Status = {
             status: 200,
@@ -68,10 +63,12 @@ export async function postTruck (request: Request, response: Response): Promise<
         }
         return response.json(status)
     } catch (error) {
+        console.log(error)
         return response.json({
             status: 500,
             message: 'Error Creating truck try again later.',
-            data: null
+            data: null,
+
         })
     }
 }

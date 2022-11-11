@@ -28,7 +28,8 @@ CREATE TABLE customer (
 CREATE TABLE truck (
     truck_id UUID NOT NULL PRIMARY KEY,
     truck_owner_id UUID NOT NULL,
-    truck_card_accepted VARCHAR(3) NOT NULL,
+    truck_name VARCHAR(32) NOT NULL,
+    truck_card_accepted VARCHAR(5) NOT NULL,
     truck_food_type VARCHAR(32) NOT NULL,
     truck_lat DECIMAL(8,5),
     truck_lng DECIMAL(9,5),
