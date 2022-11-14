@@ -39,7 +39,7 @@ CREATE INDEX ON truck (truck_owner_id);
 
 
 CREATE TABLE menu (
-    menu_id UUID NOT NULL,
+    menu_id UUID NOT NULL PRIMARY KEY,
     menu_truck_id UUID NOT NULL,
     menu_name VARCHAR(128) NOT NULL,
     menu_price VARCHAR(5) NOT NULL,

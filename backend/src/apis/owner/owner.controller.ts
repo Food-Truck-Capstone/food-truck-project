@@ -9,7 +9,7 @@ export async function putOwnerController (request: Request, response: Response):
     const ownerIdFromSession = owner.ownerId as string
 
     if (ownerId !== ownerIdFromSession) {
-      return response.json({ status: 400, data: null, message: 'You are not allowed to preform this task' })
+      return response.json({ status: 400, data: null, message: 'You are not allowed to perform this task' })
     }
 
     const { ownerPhone, ownerEmail, ownerName } = request.body
