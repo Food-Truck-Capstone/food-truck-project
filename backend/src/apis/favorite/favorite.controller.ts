@@ -9,6 +9,21 @@ import {
     selectFavoritesByFavoriteTruckId,
     selectFavoritesByFavoriteCustomerId
 } from '../../utils/models/Favorite'
+import {selectAllFavorites} from "../../utils/models/Favorite";
+
+export async function getAllFavorites (request: Request, response: Response): Promise<Response<Status>> {
+    try {
+        const data = await selectAllFavorites()
+        const status: Status = { status: 200, message: null, data }
+        return response.json(status)
+    } catch (error) {
+        return response.json({
+            status: 500,
+            message: '',
+            data: []
+        })
+    }
+}
 
 export async function getFavoritesByFavoriteTruckId (request: Request, response: Response, nextFunction: NextFunction): Promise<Response<Status>> {
     try {

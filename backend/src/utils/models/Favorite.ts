@@ -1,4 +1,5 @@
 import { sql } from '../database.utils'
+import {Truck} from "./Truck";
 
 export interface Favorite {
     favoriteCustomerId: string | null
@@ -29,4 +30,8 @@ export async function selectFavoritesByFavoriteTruckId (favoriteTruckId: string)
 
 export async function selectFavoritesByFavoriteCustomerId (favoriteCustomerId: string): Promise<Favorite[]> {
     return <Favorite[]> await sql`SELECT favorite_customer_id, favorite_truck_id FROM "favorite" WHERE favorite_customer_id = ${favoriteCustomerId}`
+}
+
+export async function selectAllFavorites (): Promise<Favorite[]> {
+    return sql <Favorite[]>  `SELECT  favorite_customer_id, favorite_truck_id FROM favorite ORDER BY favorite_customer_id DESC`
 }
