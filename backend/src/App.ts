@@ -13,6 +13,7 @@ import {postTruck} from "./apis/truck/truck.controller";
 import truckRoute from "./apis/truck/truck.route";
 import menuRoute from "./apis/menu/menu.route";
 import {ownerRoute} from "./apis/owner/owner.route";
+import favoriteRoute from "./apis/favorite/favorite.route";
 
 
 const redisClient = createClient({ legacyMode: true, socket: { host: process.env.REDIS_HOST } })
@@ -63,6 +64,7 @@ export class App {
     this.app.use('/apis/truck', truckRoute)
     this.app.use('/apis/menu', menuRoute)
     this.app.use('/apis/owner', ownerRoute)
+    this.app.use('/apis/favorite', favoriteRoute)
   }
 
   // starts the server and tells the terminal to post a message that the server is running and on what port

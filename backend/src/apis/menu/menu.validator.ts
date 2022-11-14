@@ -15,16 +15,12 @@ export const menuValidator: Schema = {
             options: {min:3, max: 128}
         }
     },
-    menuPrice: {
-        escape: true,
-        trim: true,
 
-        isLength: {
-            // ASK TEACHER ABOUT REMOVING $ FROM DATA
-            errorMessage: 'Price needs to be in 0.00 format',
-            options: {min:4}
-        }
+    menuPrice: {
+    isDecimal: {
+    errorMessage: 'The product price must be a decimal'}
     },
+
     menuDescription: {
         escape: true,
         trim: true,

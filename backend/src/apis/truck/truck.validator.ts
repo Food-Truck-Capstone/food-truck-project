@@ -3,7 +3,7 @@ import { Schema } from 'express-validator'
 export const truckValidator: Schema = {
     truckOwnerId: {
         isUUID: {
-            errorMessage: 'please provide a valid TruckOwnerId'
+            errorMessage: 'Please provide a valid TruckOwnerId'
         }
     },
 
@@ -12,8 +12,8 @@ export const truckValidator: Schema = {
         trim: true,
 
         isLength: {
-            errorMessage: 'food type cannot be longer than 32 characters',
-            options: {max: 32}
+            errorMessage: 'Truck Name must between three and thirty two characters',
+            options: {min: 3, max: 32}
         },
     },
 
@@ -27,8 +27,8 @@ export const truckValidator: Schema = {
         trim: true,
 
         isLength: {
-            errorMessage: 'food type cannot be longer than 32 characters',
-            options: {max: 32}
+            errorMessage: 'Food Type cannot be longer than 32 characters',
+            options: {min: 1, max: 32}
         },
     },
 }

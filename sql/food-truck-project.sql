@@ -42,7 +42,7 @@ CREATE TABLE menu (
     menu_id UUID NOT NULL PRIMARY KEY,
     menu_truck_id UUID NOT NULL,
     menu_name VARCHAR(128) NOT NULL,
-    menu_price VARCHAR(5) NOT NULL,
+    menu_price DECIMAL NOT NULL,
     menu_description VARCHAR(256),
     menu_img_url VARCHAR(512),
     FOREIGN KEY(menu_truck_id) REFERENCES truck (truck_id)
