@@ -2,7 +2,7 @@ import { getOwnerByOwnerIdController, putOwnerController } from './owner.control
 import { Router } from 'express'
 import { check, checkSchema } from 'express-validator'
 import { asyncValidatorController } from '../../utils/controllers/async-validator.controller'
-import { isLoggedInController } from '../../utils/controllers/is-logged-in.controller'
+import { isLoggedIn } from '../../utils/controllers/is-logged-in.controller'
 import { ownerValidator } from './owner.validator'
 
 export const ownerRoute: Router = Router()
@@ -16,4 +16,4 @@ ownerRoute.route('/:ownerId')
     ])
     , getOwnerByOwnerIdController
   )
-  .put(isLoggedInController, asyncValidatorController(checkSchema(ownerValidator)), putOwnerController)
+  .put(isLoggedIn('owner'), asyncValidatorController(checkSchema(ownerValidator)), putOwnerController)

@@ -2,7 +2,7 @@ import { Router } from 'express'
 import { getAllMenus, getMenuByMenuId, getMenusByMenuTruckId, postMenu} from './menu.controller'
 import { asyncValidatorController } from '../../utils/controllers/async-validator.controller'
 import { check, checkSchema } from 'express-validator'
-import { isLoggedInController } from "../../utils/controllers/is-logged-in.controller"
+import { isLoggedIn } from "../../utils/controllers/is-logged-in.controller"
 import { menuValidator } from './menu.validator'
 
 const router = Router()
@@ -17,6 +17,6 @@ router.route('/menuTruckId/:menuTruckId').get(asyncValidatorController([
 
 router.route('/')
     .get(getAllMenus)
-    .post(isLoggedInController,asyncValidatorController(checkSchema((menuValidator))) ,postMenu)
+    .post(isLoggedIn('owner'),asyncValidatorController(checkSchema((menuValidator))) ,postMenu)
 
 export default router

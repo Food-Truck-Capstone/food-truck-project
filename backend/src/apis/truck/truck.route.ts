@@ -2,7 +2,7 @@ import { Router } from 'express'
 import { getAllTrucks, getTruckByTruckId, getTrucksByTruckOwnerId, postTruck } from './truck.controller'
 import { asyncValidatorController } from '../../utils/controllers/async-validator.controller'
 import { check, checkSchema } from 'express-validator'
-import { isLoggedInController } from "../../utils/controllers/is-logged-in.controller"
+import { isLoggedIn } from "../../utils/controllers/is-logged-in.controller"
 import { truckValidator } from './truck.validator'
 
 const router = Router()
@@ -17,6 +17,6 @@ router.route('/truckOwnerId/:truckOwnerId').get(asyncValidatorController([
 
 router.route('/')
     .get(getAllTrucks)
-    .post(isLoggedInController,asyncValidatorController(checkSchema((truckValidator))) ,postTruck)
+    .post(isLoggedIn('owner'),asyncValidatorController(checkSchema((truckValidator))) ,postTruck)
 
 export default router

@@ -50,11 +50,14 @@ export async function postMenu (request: Request, response: Response): Promise<R
     try {
 
         const owner: Owner = request.session.owner as Owner
-        const menuOwnerId: string = owner.ownerId as string
+        const truckOwnerId: string = owner.ownerId as string
+        // Todo select truckByTruckId throw error if menuTruckId !== truckOwnerId
 
         const { menuTruckId, menuName, menuPrice, menuDescription, menuImgUrl } = request.body
-
+        if (truckOwnerId !== menuTruckId) {return response.json({ status: 400, data: null, message: 'Please login to your Truck Owner profile to post a menu item.' })
+        }
         const menu: Menu = { menuId: null, menuTruckId, menuName, menuPrice, menuDescription, menuImgUrl }
+
         const result = await insertMenu(menu)
         const status: Status = {
             status: 200,
