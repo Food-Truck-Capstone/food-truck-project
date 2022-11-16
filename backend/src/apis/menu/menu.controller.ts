@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express'
 import {insertMenu, selectAllMenus, selectMenuByMenuId, selectMenusByMenuTruckId, Menu} from '../../utils/models/Menu'
 import { Status } from '../../utils/interfaces/Status'
 import { Owner } from '../../utils/models/Owner'
+import {selectTruckByTruckId} from "../../utils/models/Truck";
 
 
 export async function getAllMenus (request: Request, response: Response): Promise<Response<Status>> {
@@ -50,11 +51,14 @@ export async function postMenu (request: Request, response: Response): Promise<R
     try {
 
         const owner: Owner = request.session.owner as Owner
-        const truckOwnerId: string = owner.ownerId as string
+        const ownerId: string = owner.ownerId as string
         // Todo select truckByTruckId throw error if menuTruckId !== truckOwnerId
 
         const { menuTruckId, menuName, menuPrice, menuDescription, menuImgUrl } = request.body
-        if (truckOwnerId !== menuTruckId) {return response.json({ status: 400, data: null, message: 'Please login to your Truck Owner profile to post a menu item.' })
+
+        const truck = await selectTruckByTruckId(menuTruckId)
+
+        if (ownerId !== truck?.truckOwnerId) {return response.json({ status: 400, data: null, message: 'Please login to your Truck Owner profile to post a menu item.' })
         }
         const menu: Menu = { menuId: null, menuTruckId, menuName, menuPrice, menuDescription, menuImgUrl }
 
