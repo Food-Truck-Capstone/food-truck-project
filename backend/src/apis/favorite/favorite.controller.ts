@@ -1,29 +1,7 @@
 import { NextFunction, Request, Response } from 'express'
 import { Status } from '../../utils/interfaces/Status'
 import { Customer } from '../../utils/models/Customer'
-import {
-    deleteFavorite,
-    insertFavorite,
-    Favorite,
-    selectFavoriteByFavoriteId,
-    selectFavoritesByFavoriteTruckId,
-    selectFavoritesByFavoriteCustomerId
-} from '../../utils/models/Favorite'
-import {selectAllFavorites} from "../../utils/models/Favorite";
-
-export async function getAllFavorites (request: Request, response: Response): Promise<Response<Status>> {
-    try {
-        const data = await selectAllFavorites()
-        const status: Status = { status: 200, message: null, data }
-        return response.json(status)
-    } catch (error) {
-        return response.json({
-            status: 500,
-            message: '',
-            data: []
-        })
-    }
-}
+import {deleteFavorite, insertFavorite, Favorite, selectFavoriteByFavoriteId, selectFavoritesByFavoriteTruckId, selectFavoritesByFavoriteCustomerId} from '../../utils/models/Favorite'
 
 export async function getFavoritesByFavoriteTruckId (request: Request, response: Response, nextFunction: NextFunction): Promise<Response<Status>> {
     try {
@@ -55,19 +33,17 @@ export async function getFavoritesByFavoriteCustomerId (request: Request, respon
 
 export async function toggleFavoriteController (request: Request, response: Response): Promise<Response<string>> {
     try {
+
         const { favoriteTruckId } = request.body
         const customer = request.session.customer as Customer
         const favoriteCustomerId = customer.customerId as string
-
-        const favorite: Favorite = {
-            favoriteCustomerId,
-            favoriteTruckId,
-        }
+        const favorite: Favorite = {favoriteCustomerId, favoriteTruckId,}
 
         const status: Status = {
             status: 200,
             message: '',
             data: null
+
         }
 
         const selectedFavorite: Favorite|null = await selectFavoriteByFavoriteId(favorite)

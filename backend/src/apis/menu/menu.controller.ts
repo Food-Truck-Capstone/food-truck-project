@@ -52,8 +52,6 @@ export async function postMenu (request: Request, response: Response): Promise<R
 
         const owner: Owner = request.session.owner as Owner
         const ownerId: string = owner.ownerId as string
-        // Todo select truckByTruckId throw error if menuTruckId !== truckOwnerId
-
         const { menuTruckId, menuName, menuPrice, menuDescription, menuImgUrl } = request.body
 
         const truck = await selectTruckByTruckId(menuTruckId)
