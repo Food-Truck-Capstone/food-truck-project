@@ -24,6 +24,6 @@ export async function selectMenuByMenuId (menuId: string): Promise<Menu|null> {
     return result?.length === 1 ? result[0] : null
 }
 
-export async function selectMenusByMenuTruckId (menuOwnerId: string): Promise<Menu[]> {
-    return <Menu[]> await sql`SELECT menu_id, menu_truck_id, menu_name, menu_price, menu_description, menu_img_url  FROM menu WHERE menu_truck_id = ${menuOwnerId}`
+export async function selectMenusByMenuTruckId (menuTruckId: string): Promise<Menu[]> {
+    return <Menu[]> await sql`SELECT menu_id, menu_truck_id, menu_name, menu_price, menu_description, menu_img_url  FROM menu WHERE menu_truck_id = ${menuTruckId}`
 }
