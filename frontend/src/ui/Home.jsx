@@ -16,13 +16,13 @@ export function Home() {
 
             <Container fluid>
                 <Row className={"justify-content-start"}>
-                    <Col md={8}>
+                    <Col lg={8}>
                         <h1>Map</h1>
                         <Map
                             initialViewState={{
                                 latitude: 35.15, longitude: -106.65, zoom: 10
                             }}
-                            style={{width: 1200, height: 800}}
+                            style={{width: '100%', height: '80vh'}}
                             mapStyle="mapbox://styles/mapbox/satellite-streets-v12"
                             mapboxAccessToken={import.meta.env.VITE_MAPBOX_ACCESS_TOKEN}
                         >
@@ -30,7 +30,7 @@ export function Home() {
                                                                key={index}/>)}
                         </Map>
                     </Col>
-                    <Col md={4}>
+                    <Col lg={4}>
                         <MenuItem/>
                     </Col>
                 </Row>
