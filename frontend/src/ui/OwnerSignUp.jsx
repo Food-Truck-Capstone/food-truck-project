@@ -1,5 +1,6 @@
 import React from "react";
 import {Container, Row} from "react-bootstrap";
+import Switch from "react-switch";
 
 export function OwnerSignUp(){
     return(
@@ -10,6 +11,15 @@ export function OwnerSignUp(){
                         <Row id="SignUpText">
                             Truck Brand:
                             <input type="text" name="name"/>
+                        </Row>
+                        <Row id="SignUpText">
+                            Type of Food:
+                            <select name="selectList">
+                                <option value="option 1">Option 1</option>
+                                <option value="option 2">Option 2</option>
+                                <option value="option 3">Option 3</option>
+                            </select>
+
                         </Row>
                         <Row id="SignUpText">
                             Password:
