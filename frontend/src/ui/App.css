@@ -1,0 +1,16 @@
+#SignUpText {
+    height: 75px;
+    margin-top: 20px;
+}
+
+
+#signUpForm {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+#submitButton {
+    width: 100px;
+    margin-top: 600px;
+}
