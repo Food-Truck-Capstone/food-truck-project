@@ -8,34 +8,12 @@ export function OwnerSignUp() {
             <Container>
                 <form id="signUpForm">
                     <label>
-                        <Row id="SignUpText">
-                            Truck Name:
-                            <input type="text" name="name"/>
-                        </Row>
-                        <Row id="SignUpText">
-                            Owner Name:
-                            <input type="text" name="name"/>
-                        </Row>
-                        <Row className="mt-5">
-                            Cash ONLY?
-                            <label className="switch">
-                                <input type="checkbox"></input>
-                                <span className="slider round"></span>
-                            </label>
 
-                        </Row>
                         <Row id="SignUpText">
-                            Type of Food:
-                            <select name="selectList">
-                                <option value="option 1">Option 1</option>
-                                <option value="option 2">Option 2</option>
-                                <option value="option 3">Option 3</option>
-                            </select>
+                            Owner Email:
+                            <input type="text" name="name"/>
                         </Row>
-                        <Row id="SignUpText">
-                            Truck Number (for multiple trucks under same name) :
-                            <input type="text" name="truck number"/>
-                        </Row>
+
                         <Row id="SignUpText">
                             Password:
                             <input type="password" name="password"/>

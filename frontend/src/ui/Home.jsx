@@ -4,6 +4,8 @@ import {MenuItem} from "./MenuItem.jsx";
 import {Menu} from "./Menu.jsx";
 import {FoodTruckMap} from "./FoodTruckMap";
 import {Foodtruckbadge} from "./foodtruckbadge";
+import {OwnerSignUp} from "./OwnerSignUp";
+import {AddTruck} from "./AddTruck.jsx";
 
 export function Home() {
 
@@ -30,6 +32,8 @@ export function Home() {
            <Foodtruckbadge/>
             <Foodtruckbadge/>
             <Foodtruckbadge/>
+            <OwnerSignUp/>
+            <AddTruck/>
         </>
     )
 }
