@@ -1,13 +1,9 @@
 import React from "react"
 import {Col, Container, Row} from "react-bootstrap";
-import Map from "react-map-gl";
-import {Pin} from "./Pin.jsx";
-import {CustomerSignUp} from "./CustomerSignUp";
-import {OwnerSignUp} from "./OwnerSignUp";
 import {MenuItem} from "./MenuItem.jsx";
 import {Menu} from "./Menu.jsx";
 import {FoodTruckMap} from "./FoodTruckMap";
-
+import {Foodtruckbadge} from "./foodtruckbadge";
 
 export function Home() {
 
@@ -31,6 +27,9 @@ export function Home() {
                     </Col>
                 </Row>
             </Container>
+           <Foodtruckbadge/>
+            <Foodtruckbadge/>
+            <Foodtruckbadge/>
         </>
     )
 }
