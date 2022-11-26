@@ -4,7 +4,7 @@ import {Col, Container, Row} from "react-bootstrap";
 export function MenuItem() {
     return (
         <>
-            <Row className="mt-5 border border-dark rounded">
+            <Row className="border border-dark rounded">
                 <Col className={"text-center my-auto order-lg-last pt-3"} lg={4}>
                     <img src={"https://placekitten.com/60/60"} className={"rounded-circle"} alt={"kitten"}/>
                 </Col>
