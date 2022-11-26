@@ -52,7 +52,7 @@ export async function postTruck (request: Request, response: Response): Promise<
         const owner: Owner = request.session.owner as Owner
         const truckOwnerId: string = owner.ownerId as string
 
-        const { truckId, truckName, truckCardAccepted, truckFoodType } = request.body
+        const { truckName, truckCardAccepted, truckFoodType } = request.body
 
         const truck: Truck = { truckId: null, truckOwnerId, truckName, truckCardAccepted, truckFoodType, truckLat: null, truckLng: null }
         const result = await insertTruck(truck)

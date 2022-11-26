@@ -1,9 +1,13 @@
 import React from "react"
+import {Foodtruckbadge} from "./foodtruckbadge";
 
 export function Home() {
     return (
         <>
-            <h1>Home</h1>
+           <Foodtruckbadge/>
+            <Foodtruckbadge/>
+            <Foodtruckbadge/>
+
         </>
     )
 }
