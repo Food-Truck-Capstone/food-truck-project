@@ -2,7 +2,8 @@ import React from "react"
 import {Col, Container, Row} from "react-bootstrap";
 import Map from "react-map-gl";
 import {Pin} from "./Pin.jsx";
-
+import {CustomerSignUp} from "./CustomerSignUp";
+import {OwnerSignUp} from "./OwnerSignUp";
 import {MenuItem} from "./MenuItem.jsx";
 import {Menu} from "./Menu.jsx";
 import {FoodTruckMap} from "./FoodTruckMap";
@@ -10,7 +11,8 @@ import {FoodTruckMap} from "./FoodTruckMap";
 
 export function Home() {
 
-    return (<>
+    return (
+        <>
         <Menu/>
             <Container fluid>
                 <Row>
@@ -29,5 +31,6 @@ export function Home() {
                     </Col>
                 </Row>
             </Container>
-        </>)
+        </>
+    )
 }
