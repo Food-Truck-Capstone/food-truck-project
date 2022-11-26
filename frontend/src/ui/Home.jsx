@@ -1,9 +1,10 @@
-import React from "react"
+import {Menu} from "./Menu.jsx";
 
-export function Home() {
+
+export function Home () {
     return (
         <>
-            <h1>Home</h1>
+            <Menu/>
         </>
     )
 }
