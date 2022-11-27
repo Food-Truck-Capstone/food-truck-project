@@ -1,5 +1,5 @@
 import React from "react"
-import {Col, Container, Row} from "react-bootstrap";
+import {Col, Container, InputGroup, Row} from "react-bootstrap";
 import {MenuItem} from "./MenuItem.jsx";
 import {Menu} from "./Menu.jsx";
 import {FoodTruckMap} from "./FoodTruckMap";
@@ -22,5 +22,5 @@ export function Home() {
             </Container>
 
         </>
-    )
+  )
 }
