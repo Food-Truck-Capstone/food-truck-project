@@ -22,6 +22,8 @@ export function Menu () {
                                 <Nav.Link><SignInModal/></Nav.Link>
                                 {/*Sign Up Modal*/}
                                 <Nav.Link><SignUpModal/></Nav.Link>
+                                {/*Manage Profile Screen*/}
+                                <Nav.Link href="manage-profile">Manage Profile </Nav.Link>
                             </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>
