@@ -14,7 +14,7 @@ export function MenuItems() {
                         </Col>
                     </Row>
                 </Col>
-                <Col xs={3}>
+                <Col xs={3} className={"my-auto pt-3 pb-3"}>
                     <img src={"https://placekitten.com/100/100"} className="img-fluid rounded-circle text-center align-items-center" alt="Food Truck Icon"/>
                 </Col>
             </Row>
