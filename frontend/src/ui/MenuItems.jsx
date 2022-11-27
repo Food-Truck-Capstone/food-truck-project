@@ -5,8 +5,8 @@ import {Col, Row} from "react-bootstrap";
 export function MenuItems() {
     return (
         <>
-            <Row className="border border-dark rounded mt-3 ms-0" >
-                <Col xs={9}>
+            <Row className="border border-dark rounded mt-2 ms-0" >
+                <Col xs={9} className={"pt-3"}>
                     <Row>
                         <Col>
                             <h5>Carne Asada Tacos - $12.00</h5>
