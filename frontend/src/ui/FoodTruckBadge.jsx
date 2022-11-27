@@ -39,7 +39,7 @@ export function FoodTruckBadge () {
            {/*    <MenuItem/>*/}
            {/*</Container>*/}
 
-           <Row className="border border-dark rounded mt-2 ms-0">
+           <Row className="border border-dark rounded mt-2 ms-0 me-2">
                <Col xs={3} className={"my-auto pt-2 pb-3"}>
                    <img src={image} className="img-fluid" alt="Food Truck Icon"/>
                </Col>
