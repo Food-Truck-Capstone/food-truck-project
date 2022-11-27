@@ -3,7 +3,7 @@ import {Col, Container, Row} from "react-bootstrap";
 import {MenuItem} from "./MenuItem.jsx";
 import {Menu} from "./Menu.jsx";
 import {FoodTruckMap} from "./FoodTruckMap";
-import {Foodtruckbadge} from "./foodtruckbadge";
+import {FoodTruckBadge} from "./FoodTruckBadge.jsx";
 
 export function Home() {
 
@@ -16,20 +16,11 @@ export function Home() {
                         <FoodTruckMap/>
                     </Col>
                     <Col className="overflow-auto" lg={4} style={{height: '90vh'}} >
-                        <MenuItem/>
-                        <MenuItem/>
-                        <MenuItem/>
-                        <MenuItem/>
-                        <MenuItem/>
-                        <MenuItem/>
-                        <MenuItem/>
-                        <MenuItem/>
+                        <FoodTruckBadge/>
                     </Col>
                 </Row>
             </Container>
-           <Foodtruckbadge/>
-            <Foodtruckbadge/>
-            <Foodtruckbadge/>
+
         </>
     )
 }

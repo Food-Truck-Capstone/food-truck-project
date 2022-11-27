@@ -21,21 +21,27 @@ export function SignInModal() {
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Group className="mb-3" controlId="signInEmail">
                             <Form.Label>Email Address</Form.Label>
                             <Form.Control
                                 type="email"
                                 autoFocus
                             />
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
+                        <Form.Group className="mb-3" controlId="signInPassword">
                             <Form.Label>Password</Form.Label>
                             <Form.Control
                                 type="password"
                                 autoFocus
                             />
                         </Form.Group>
-
+                    </Form>
+                    <Form>
+                        <Form.Group className="mb-3" controlId="signInUserType">
+                            <Form.Label className="mr-3">User Type</Form.Label>
+                            <Form.Check type="radio" label="Customer" name="userType"/>
+                            <Form.Check type="radio" label="Truck Owner" name="userType"/>
+                        </Form.Group>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>

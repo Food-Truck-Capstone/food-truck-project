@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import {SignInModal} from "./SignInModal.jsx";
+import {SignUpModal} from "./SignupModal.jsx";
 
 export function Menu () {
     return (
@@ -17,8 +18,10 @@ export function Menu () {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
+                               {/*Sign In Modal*/}
                                 <Nav.Link><SignInModal/></Nav.Link>
-                                <Nav.Link href="#action2">Option #2</Nav.Link>
+                                {/*Sign Up Modal*/}
+                                <Nav.Link><SignUpModal/></Nav.Link>
                             </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>
