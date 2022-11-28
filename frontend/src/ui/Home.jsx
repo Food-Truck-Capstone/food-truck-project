@@ -22,9 +22,6 @@ export function Home() {
                     </Col>
                 </Row>
             </Container>
-            <TruckManagement/>
-            <MenuManagement/>
-
         </>
   )
 }
