@@ -5,7 +5,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import {SignInModal} from "./SignInModal.jsx";
 import {SignUpModal} from "./SignupModal.jsx";
 
-export function Menu () {
+export function NavigationMenu () {
     return (
         <>
             <Navbar key={false} bg="light" expand={false} className="mb-3">
@@ -22,7 +22,7 @@ export function Menu () {
                                 <Nav.Link><SignInModal/></Nav.Link>
                                 {/*Sign Up Modal*/}
                                 <Nav.Link><SignUpModal/></Nav.Link>
-                                {/*Manage Profile Screen*/}
+                                {/*Manage ManageProfileData Screen*/}
                                 <Nav.Link href="manage-profile">Manage Profile </Nav.Link>
                             </Nav>
                         </Offcanvas.Body>

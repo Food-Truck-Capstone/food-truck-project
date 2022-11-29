@@ -2,7 +2,7 @@ import React from "react"
 import {Col, Row} from "react-bootstrap";
 
 
-export function MenuItems() {
+export function TruckBadgeMenuItem() {
     return (
         <>
             <Row className="border border-dark rounded mt-2 ms-0 me-2" >

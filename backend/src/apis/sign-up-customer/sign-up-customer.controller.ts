@@ -33,7 +33,7 @@ export async function signUpCustomerController (request: Request, response: Resp
 
     const status: Status = {
       status: 200,
-      message: 'Profile successfully created please check your email.',
+      message: 'ManageProfileData successfully created please check your email.',
       data: null
     }
 
