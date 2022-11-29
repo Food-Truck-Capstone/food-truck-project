@@ -29,14 +29,16 @@ export function ManageMenu() {
                             <Col md={2}><h5>Item Name</h5></Col>
                             <Col md={4}><h5>Item Description</h5></Col>
                             <Col md={2}><h5>Item Price</h5></Col>
-                            <Col md={2}><h5>Apply All?</h5></Col>
-                            <Col md={1}></Col>
+                            <Col md={3}><h5>Apply to All Trucks</h5></Col>
                         </Row>
                         {/*Insert NavigationMenu Items Here*/}
                         <ManageMenuItems/>
                         <ManageMenuItems/>
                         <ManageMenuItems/>
                     </Container>
+                    <Col className={"text-center mt-3"}>
+                        <Button href={"#"}>+</Button>
+                    </Col>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={handleClose}>
@@ -45,6 +47,7 @@ export function ManageMenu() {
                     <Button variant="secondary" onClick={handleClose}>
                         Cancel
                     </Button>
+
                 </Modal.Footer>
             </Modal>
         </>

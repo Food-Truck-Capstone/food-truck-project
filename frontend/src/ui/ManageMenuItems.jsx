@@ -26,14 +26,12 @@ export function ManageMenuItems () {
                     <p>$12.99</p>
                 </Col>
 
-                <Col md={2} className={"my-auto"}>
+                <Col md={3} className={"my-auto"}>
                     <Form>
                         <Form.Check type="checkbox"/>
                     </Form>
                 </Col>
 
-                <Col md={1}><Link href={"#"}>Save</Link>
-                </Col>
             </Row>
         </>
     )
