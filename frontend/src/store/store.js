@@ -1,5 +1,6 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit'
-import misquotes from './misquotes.js'
+import truck from "./truck.js";
 
-const reducer = combineReducers({misquotes})
+const reducer = combineReducers({truck})
 export default configureStore({reducer})
+
