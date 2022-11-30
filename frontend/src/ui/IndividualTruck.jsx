@@ -1,7 +1,7 @@
 import { Card, Col } from 'react-bootstrap'
 import React from 'react'
 
-export function PostAllTrucks ({truck}) {
+export function IndividualTruck ({truck}) {
     console.log(truck)
     const {truck_id, truck_owner_id, truck_name, truck_card_accepted, truck_food_type, truck_lat, truck_lng} = foodtruck
     return (

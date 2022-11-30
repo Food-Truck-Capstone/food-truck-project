@@ -3,7 +3,7 @@ import {Col, Container, Row} from "react-bootstrap";
 import {OwnerProfile} from "./OwnerProfile";
 import {TruckManagement} from "./TruckManagement";
 import {MenuManagement} from "./MenuManagement";
-import {PostAllTrucks} from "./PostAllTrucks";
+import {IndividualTruck} from "./IndividualTruck.jsx";
 
 export function ManageProfile () {
     return (
@@ -17,7 +17,7 @@ export function ManageProfile () {
                         <MenuManagement/>
                     </Col>
                 </Row>
-                <PostAllTrucks/>
+                <IndividualTruck/>
             </Container>
         </>
     )

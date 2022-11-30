@@ -1,13 +1,22 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {Col, Container, InputGroup, Row} from "react-bootstrap";
-import {MenuItem} from "./MenuItem.jsx";
 import {Menu} from "./Menu.jsx";
 import {FoodTruckMap} from "./FoodTruckMap";
 import {FoodTruckBadge} from "./FoodTruckBadge.jsx";
-import {TruckManagement} from "./TruckManagement.jsx";
-import {MenuManagement} from "./MenuManagement.jsx";
+import {fetchAllTruck} from "../store/truck.js";
+import {useDispatch, useSelector} from "react-redux";
 
 export function Home() {
+
+    const trucks = useSelector(state => state.truck ? state.truck : [])
+
+    const dispatch = useDispatch()
+    const initialEffects = () => {
+        dispatch(fetchAllTruck())
+    }
+    useEffect(initialEffects, [dispatch])
+
+    console.log(trucks)
 
     return (
         <>
@@ -18,7 +27,7 @@ export function Home() {
                         <FoodTruckMap/>
                     </Col>
                     <Col className="overflow-auto" lg={4} style={{height: '90vh'}} >
-                        <FoodTruckBadge/>
+                        {trucks.map((truck, index) =>    <FoodTruckBadge truck={truck} key={index}/>)}
                     </Col>
                 </Row>
             </Container>

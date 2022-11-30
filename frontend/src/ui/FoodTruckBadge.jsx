@@ -7,7 +7,7 @@ import {MenuItem} from "./MenuItem";
 import {MenuItems} from "./MenuItems";
 
 
-export function FoodTruckBadge () {
+export function FoodTruckBadge ({truck}) {
     return(
        <>
            {/*<Container  className="text-left border border-secondary  border-dark rounded  ">*/}
@@ -46,13 +46,12 @@ export function FoodTruckBadge () {
                <Col xs={9} className={"pt-2 my-auto"}>
                    <Row>
                        <Col>
-                           <h3>South of the Border</h3>
-                           <h5>Mexican</h5>
+                           <h3>{truck.truckName}</h3>
+                           <h5>{truck.truckFoodType}</h5>
                            <h5>1.1 Miles Away</h5>
                        </Col>
                    </Row>
                </Col>
-               <MenuItems/>
                <MenuItems/>
            </Row>
 
