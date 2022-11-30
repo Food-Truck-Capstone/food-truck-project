@@ -15,15 +15,16 @@ export function ManageMenuItems () {
                 </Col>
 
                 <Col md={2} className={"my-auto"}>
-                    <p>Carne Asada Tacos</p>
+                    <input className="form-control" type="text" placeholder="Enter Item Name"/>
                 </Col>
 
                 <Col md={4} className={"my-auto"}>
-                    <p>Flank steak marinated in juices served on corn tortillas.</p>
+                    <textarea className="form-control" rows="1" placeholder="Enter Item Description"/>
                 </Col>
 
                 <Col md={2} className={"my-auto"}>
-                    <p>$12.99</p>
+                    <p className={"d-inline"}>$ </p>
+                    <input className="form-control w-50 d-inline" type="text" placeholder="0.00"/>
                 </Col>
 
                 <Col md={3} className={"my-auto"}>

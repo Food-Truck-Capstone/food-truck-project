@@ -9,11 +9,10 @@ export function ManageProfile () {
         <>
             <Container>
                 <Row>
-                    <Col>
+                    <Col className={"text-center"}>
                         <h1>Manage Profile</h1>
                         <OwnerProfile/>
                         <ManageTruck/>
-                        <ManageMenu/>
                     </Col>
                 </Row>
             </Container>
