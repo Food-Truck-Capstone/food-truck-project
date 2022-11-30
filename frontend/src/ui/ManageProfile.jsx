@@ -17,7 +17,6 @@ export function ManageProfile () {
                         <MenuManagement/>
                     </Col>
                 </Row>
-                <IndividualTruck/>
             </Container>
         </>
     )
