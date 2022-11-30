@@ -1,13 +1,9 @@
 import React from "react";
-import {Col, Container, Row} from "react-bootstrap";
-
-
+import {Col, Row} from "react-bootstrap";
 
 export function OwnerProfile() {
     return (
         <>
-            <Container className="align-content-center">
-                <h2>Truck Owner Profile</h2>
                 <form id="OwnerLoginForm">
                     <label>
                         <Row id="OwnerLoginText">
@@ -32,7 +28,6 @@ export function OwnerProfile() {
                         </Row>
                     </label>
                 </form>
-            </Container>
         </>
     )
 }

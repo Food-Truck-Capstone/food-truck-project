@@ -1,3 +1,4 @@
+
 import React, {useEffect} from "react"
 import {Col, Container, InputGroup, Row} from "react-bootstrap";
 import {Menu} from "./Menu.jsx";
@@ -5,6 +6,7 @@ import {FoodTruckMap} from "./FoodTruckMap";
 import {FoodTruckBadge} from "./FoodTruckBadge.jsx";
 import {fetchAllTruck} from "../store/truck.js";
 import {useDispatch, useSelector} from "react-redux";
+import {NavigationMenu} from "./NavigationMenu.jsx";
 
 export function Home() {
 
@@ -20,7 +22,7 @@ export function Home() {
 
     return (
         <>
-        <Menu/>
+        <NavigationMenu/>
             <Container fluid>
                 <Row>
                     <Col lg={8} className="align-items-stretch">

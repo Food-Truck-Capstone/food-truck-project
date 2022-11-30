@@ -1,10 +1,10 @@
 import React from "react";
 import {Col, Row} from "react-bootstrap";
 import image from "../image/food truck.jpg";
-import {MenuItems} from "./MenuItems";
+import {TruckBadgeMenuItem} from "./TruckBadgeMenuItem.jsx";
 
 
-export function FoodTruckBadge ({truck}) {
+export function TruckBadge () {
     return(
        <>
            <Row className="border border-dark rounded mt-2 ms-0 me-2">
@@ -14,15 +14,15 @@ export function FoodTruckBadge ({truck}) {
                <Col xs={9} className={"pt-2 my-auto"}>
                    <Row>
                        <Col>
-                           <h3>{truck.truckName}</h3>
-                           <h5>{truck.truckFoodType}</h5>
+                           <h3>South of the Border</h3>
+                           <h5>Mexican</h5>
                            <h5>1.1 Miles Away</h5>
                        </Col>
                    </Row>
                </Col>
-               <MenuItems/>
+               <TruckBadgeMenuItem/>
+               <TruckBadgeMenuItem/>
            </Row>
-
        </>
     )
 }
