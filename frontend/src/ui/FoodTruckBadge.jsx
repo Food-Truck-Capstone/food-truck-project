@@ -2,6 +2,7 @@ import React from "react";
 import {Col, Row} from "react-bootstrap";
 import image from "../image/food truck.jpg";
 import {ManageMenuItems} from "./ManageMenuItems";
+import {TruckBadgeMenuItem} from "./TruckBadgeMenuItem";
 
 
 export function FoodTruckBadge ({truck}) {
@@ -20,11 +21,10 @@ export function FoodTruckBadge ({truck}) {
                        </Col>
                    </Row>
                </Col>
-               <ManageMenuItems/>
+               <TruckBadgeMenuItem/>
            </Row>
 
        </>
     )
 }
-
 
