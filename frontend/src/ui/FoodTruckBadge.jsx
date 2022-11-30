@@ -1,7 +1,7 @@
 import React from "react";
 import {Col, Row} from "react-bootstrap";
 import image from "../image/food truck.jpg";
-import {MenuItems} from "./MenuItems";
+import {ManageMenuItems} from "./ManageMenuItems";
 
 
 export function FoodTruckBadge ({truck}) {
@@ -20,7 +20,7 @@ export function FoodTruckBadge ({truck}) {
                        </Col>
                    </Row>
                </Col>
-               <MenuItems/>
+               <ManageMenuItems/>
            </Row>
 
        </>

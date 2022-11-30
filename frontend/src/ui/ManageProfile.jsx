@@ -1,8 +1,8 @@
 import React from "react"
 import {Col, Container, Row} from "react-bootstrap";
 import {OwnerProfile} from "./OwnerProfile";
-import {TruckManagement} from "./TruckManagement";
-import {MenuManagement} from "./MenuManagement";
+import {ManageMenu} from "./ManageMenu";
+import {ManageTruck} from "./ManageTruck";
 
 export function ManageProfile () {
     return (
@@ -12,8 +12,8 @@ export function ManageProfile () {
                     <Col>
                         <h1>Manage Profile</h1>
                         <OwnerProfile/>
-                        <TruckManagement/>
-                        <MenuManagement/>
+                        <ManageTruck/>
+                        <ManageMenu/>
                     </Col>
                 </Row>
             </Container>

@@ -1,7 +1,6 @@
 
 import React, {useEffect} from "react"
 import {Col, Container, InputGroup, Row} from "react-bootstrap";
-import {Menu} from "./Menu.jsx";
 import {FoodTruckMap} from "./FoodTruckMap";
 import {FoodTruckBadge} from "./FoodTruckBadge.jsx";
 import {fetchAllTruck} from "../store/truck.js";
