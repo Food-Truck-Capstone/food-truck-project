@@ -2,7 +2,7 @@ import Map from "react-map-gl";
 import React from "react";
 import {Pin} from "./Pin.jsx";
 
-export function FoodTruckMap () {
+export function TruckMap () {
 
     const [points] = React.useState([// { lat: 35.332, lng: -106.652 },
         // { lat: 35.339, lng: -106.656 },

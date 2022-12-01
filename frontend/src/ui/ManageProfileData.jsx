@@ -20,7 +20,7 @@ export function ManageProfileData () {
 
                     <Form.Group className="mb-3" controlId="userEmail">
                         <Form.Label>Email Address</Form.Label>
-                        <Form.Control type="tel" placeholder="sample@email.com" />
+                        <Form.Control type="email" placeholder="sample@email.com" />
                     </Form.Group>
 
                     <Button variant="primary" type="submit">

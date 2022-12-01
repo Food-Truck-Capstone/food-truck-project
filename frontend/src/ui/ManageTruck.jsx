@@ -21,7 +21,7 @@ export function ManageTruck() {
                     </Col>
 
                     <Col md={3}>
-                        <h5>Food Type</h5>
+                        <h5>Truck Type</h5>
                     </Col>
 
                     <Col md={2}>

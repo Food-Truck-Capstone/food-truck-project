@@ -4,7 +4,7 @@ import image from "../image/food truck.jpg";
 import {TruckBadgeMenuItem} from "./TruckBadgeMenuItem.jsx";
 
 
-export function TruckBadge () {
+export function TruckBadge ({truck}) {
     return(
        <>
            <Row className="border border-dark rounded mt-2 ms-0 me-2">
@@ -14,8 +14,8 @@ export function TruckBadge () {
                <Col xs={9} className={"pt-2 my-auto"}>
                    <Row>
                        <Col>
-                           <h3>South of the Border</h3>
-                           <h5>Mexican</h5>
+                           <h3>{truck.truckName}</h3>
+                           <h5>{truck.truckFoodType}</h5>
                            <h5>1.1 Miles Away</h5>
                        </Col>
                    </Row>

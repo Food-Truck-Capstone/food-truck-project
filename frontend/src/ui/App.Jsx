@@ -4,8 +4,8 @@ import './App.css'
 import { Home } from './Home.jsx'
 import { FourOhFour } from './FourOhFour.jsx'
 import 'mapbox-gl/dist/mapbox-gl.css'
-import {ManageProfile} from "./ManageProfile";
 import {Provider} from "react-redux";
+import {Manage} from "./Manage.jsx";
 
 
 export function App({store}) {
@@ -16,7 +16,7 @@ export function App({store}) {
                     <Routes>
                         <Route  path='/' element={<Home />} />
                         <Route path={"*"} element={<FourOhFour />} />
-                        <Route path={"/manage-profile"} element={<ManageProfile/>} />
+                        <Route path={"/manage-profile"} element={<Manage/>} />
                     </Routes>
                 </BrowserRouter>
             </Provider>

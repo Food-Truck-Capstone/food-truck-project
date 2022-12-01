@@ -1,8 +1,8 @@
 
 import React, {useEffect} from "react"
 import {Col, Container, InputGroup, Row} from "react-bootstrap";
-import {FoodTruckMap} from "./FoodTruckMap";
-import {FoodTruckBadge} from "./FoodTruckBadge.jsx";
+import {TruckMap} from "./TruckMap.jsx";
+import {TruckBadge} from "./TruckBadge.jsx";
 import {fetchAllTruck} from "../store/truck.js";
 import {useDispatch, useSelector} from "react-redux";
 import {NavigationMenu} from "./NavigationMenu.jsx";
@@ -25,10 +25,10 @@ export function Home() {
             <Container fluid>
                 <Row>
                     <Col lg={8} className="align-items-stretch">
-                        <FoodTruckMap/>
+                        <TruckMap/>
                     </Col>
                     <Col className="overflow-auto" lg={4} style={{height: '90vh'}} >
-                        {trucks.map((truck, index) =>    <FoodTruckBadge truck={truck} key={index}/>)}
+                        {trucks.map((truck, index) =>    <TruckBadge truck={truck} key={index}/>)}
                     </Col>
                 </Row>
             </Container>
