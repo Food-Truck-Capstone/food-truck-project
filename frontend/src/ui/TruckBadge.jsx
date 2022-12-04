@@ -1,10 +1,23 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Col, Row} from "react-bootstrap";
 import image from "../image/food truck.jpg";
 import {TruckBadgeMenuItem} from "./TruckBadgeMenuItem.jsx";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAllTruck} from "../store/truck.js";
+import {fetchAllMenus} from "../store/menus.js";
 
 
 export function TruckBadge ({truck}) {
+    const menus = useSelector(state => {
+        console.log(state.menus)
+        if (state.menus[truck.truckId] === undefined) {
+            return []
+        } else {
+            return state.menus[truck.truckId]
+        }
+    })
+    console.log(menus)
+
     return(
        <>
            <Row className="border border-dark rounded mt-2 ms-0 me-2">
@@ -20,8 +33,8 @@ export function TruckBadge ({truck}) {
                        </Col>
                    </Row>
                </Col>
-               <TruckBadgeMenuItem/>
-               <TruckBadgeMenuItem/>
+               {menus.map((menu,index)=> <TruckBadgeMenuItem menu={menu} key={index}/>
+               )}
            </Row>
        </>
     )

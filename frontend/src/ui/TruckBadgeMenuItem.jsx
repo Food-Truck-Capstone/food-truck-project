@@ -2,15 +2,16 @@ import React from "react"
 import {Col, Row} from "react-bootstrap";
 
 
-export function TruckBadgeMenuItem() {
+export function TruckBadgeMenuItem({menu}) {
     return (
         <>
             <Row className="border border-dark rounded mt-2 ms-0 me-2" >
                 <Col xs={9} className={"pt-3"}>
                     <Row>
                         <Col>
-                            <h5>Carne Asada Tacos - $12.00</h5>
-                            <p> Flank or skirt steak, marinated in a mixture of fresh orange and lime juice, oil, jalapeño, cilantro, garlic and seasonings.</p>
+                            <h5>{menu.menuName}</h5>
+                            <h5>{menu.menuPrice}</h5>
+                            <p> {menu.menuDescription}</p>
                         </Col>
                     </Row>
                 </Col>

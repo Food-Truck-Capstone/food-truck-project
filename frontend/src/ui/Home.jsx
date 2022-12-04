@@ -6,6 +6,7 @@ import {TruckBadge} from "./TruckBadge.jsx";
 import {fetchAllTruck} from "../store/truck.js";
 import {useDispatch, useSelector} from "react-redux";
 import {NavigationMenu} from "./NavigationMenu.jsx";
+import {fetchAllMenus} from "../store/menus.js";
 
 export function Home() {
 
@@ -14,10 +15,13 @@ export function Home() {
     const dispatch = useDispatch()
     const initialEffects = () => {
         dispatch(fetchAllTruck())
+        dispatch(fetchAllMenus())
+
     }
     useEffect(initialEffects, [dispatch])
 
     console.log(trucks)
+
 
     return (
         <>
