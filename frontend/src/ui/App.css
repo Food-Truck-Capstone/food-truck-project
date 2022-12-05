@@ -81,3 +81,8 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+.add-edit-menu {
+color: blue;
+text-decoration: underline;
+}

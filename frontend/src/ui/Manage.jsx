@@ -19,8 +19,8 @@ export function Manage () {
                 </Row>
                 {/*This is the Manage Trucks Section*/}
                 <Row className="text-center my-3">
-                    <Col>
-                        <h1>Manage Truck(s)</h1>
+                    <Col className={"m-5"}>
+                        <h1>My Truck(s)</h1>
                     </Col>
                 </Row>
                 <Row>
