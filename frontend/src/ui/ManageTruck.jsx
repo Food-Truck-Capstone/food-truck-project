@@ -6,38 +6,22 @@ import {ManageTruckData} from "./ManageTruckData";
 export function ManageTruck() {
     return (
         <>
-            <Container className={"text-center"}>
+            <Container>
                 <Row>
-                    <Col md={1}>
-                        <h5>Select</h5>
-                    </Col>
-
-                    <Col md={1}>
-                        <h5>Truck #</h5>
-                    </Col>
-
-                    <Col md={3}>
-                        <h5>Truck Name</h5>
-                    </Col>
-
-                    <Col md={3}>
-                        <h5>Truck Type</h5>
-                    </Col>
-
-                    <Col md={2}>
-                        <h5>Menu</h5>
-                    </Col>
-
-                    <Col md={2}>
-                        <h5>Card Accepted</h5>
-                    </Col>
+                    <Col md={1} className={"text-center"}><h5>Select</h5></Col>
+                    <Col md={1} className={"text-center"}><h5>Truck #</h5></Col>
+                    <Col md={3} className={"text-center"}><h5>Truck Name</h5></Col>
+                    <Col md={2} className={"text-center"}><h5>Truck Type</h5></Col>
+                    <Col md={2} className={"text-center"}><h5>Card Accepted</h5></Col>
+                    <Col md={1}></Col>
+                    <Col md={2} className={"menu text-center"}><h5>Menu</h5></Col>
                 </Row>
 
                 {/*Insert ManageTruckData component here for the number of trucks the owner has.*/}
                 <ManageTruckData/>
                 <ManageTruckData/>
 
-                <Col className={"text-center mt-3"}>
+                <Col className={"text-center mb-3"}>
                     <Button href={"#"}>+</Button>
                 </Col>
             </Container>

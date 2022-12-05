@@ -6,6 +6,7 @@ import { FourOhFour } from './FourOhFour.jsx'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import {Provider} from "react-redux";
 import {Manage} from "./Manage.jsx";
+import {ManageMenu} from "./ManageMenu";
 
 
 export function App({store}) {
@@ -17,6 +18,7 @@ export function App({store}) {
                         <Route  path='/' element={<Home />} />
                         <Route path={"*"} element={<FourOhFour />} />
                         <Route path={"/manage-profile"} element={<Manage/>} />
+                        <Route path={"/manage-menu"} element={<ManageMenu/>} />
                     </Routes>
                 </BrowserRouter>
             </Provider>
