@@ -3,7 +3,8 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import {SignInModal} from "./SignInModal.jsx";
-import {SignUpModal} from "./SignupModal.jsx";
+import {SignupOwnerModal} from "./SignupOwnerModal.jsx";
+import {SignupCustomerModal} from "./SignupCustomerModal.jsx";
 
 export function NavigationMenu () {
     return (
@@ -20,8 +21,9 @@ export function NavigationMenu () {
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                {/*Sign In Modal*/}
                                 <Nav.Link><SignInModal/></Nav.Link>
-                                {/*Sign Up Modal*/}
-                                <Nav.Link><SignUpModal/></Nav.Link>
+                                {/*Sign Up Modals*/}
+                                <Nav.Link><SignupOwnerModal/></Nav.Link>
+                                <Nav.Link><SignupCustomerModal/></Nav.Link>
                                 {/*Manage ManageProfileData Screen*/}
                                 <Nav.Link href="manage-profile">Manage Profile </Nav.Link>
                             </Nav>

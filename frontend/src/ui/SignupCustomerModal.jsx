@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 
-export function SignUpModal() {
+export function SignupCustomerModal() {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -12,12 +12,12 @@ export function SignUpModal() {
     return (
         <>
             <Button variant="link" onClick={handleShow}>
-                Sign Up
+                Customer Sign Up
             </Button>
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Sign Up</Modal.Title>
+                    <Modal.Title>Customer Sign Up</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
@@ -54,19 +54,6 @@ export function SignUpModal() {
                             <Form.Control
                                 type="password"
                                 autoFocus
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3">
-                            <Form.Label className="mb-3">Food Truck Owner?</Form.Label>
-                            <Form.Check
-                                type="radio"
-                                label="Yes"
-                                        name="test22"
-                            />
-                            <Form.Check inline
-                                type="radio"
-                                label="No"
-                                        name="test22"
                             />
                         </Form.Group>
                     </Form>
