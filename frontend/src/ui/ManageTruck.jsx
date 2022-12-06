@@ -18,7 +18,7 @@ export function ManageTruck() {
                 </Row>
 
                 {/*Insert ManageTruckData component here for the number of trucks the owner has.*/}
-                <ManageTruckData/>
+                <ManageTruckData truckId="56009db2-ccc2-42bd-90eb-827b5cb65fc4"/>
                 <ManageTruckData/>
 
                 <Col className={"text-center mb-3"}>

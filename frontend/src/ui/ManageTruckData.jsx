@@ -4,7 +4,7 @@ import {ManageMenu} from "./ManageMenu.jsx";
 import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
 
-export function ManageTruckData() {
+export function ManageTruckData({truckId}) {
     return (
         <>
             <Row className={"border border-dark rounded-2 mb-2 py-3"}>
@@ -57,7 +57,7 @@ export function ManageTruckData() {
                 </Col>
 
             <Col md={2} className={"add-edit-menu my-auto text-center"}>
-                <Nav.Link href="manage-menu">Add/Edit Menu </Nav.Link>
+                <Nav.Link href={`manage-menu/${truckId}`}>Add/Edit Menu </Nav.Link>
             </Col>
             </Row>
         </>

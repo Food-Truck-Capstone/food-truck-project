@@ -18,7 +18,7 @@ export function App({store}) {
                         <Route  path='/' element={<Home />} />
                         <Route path={"*"} element={<FourOhFour />} />
                         <Route path={"/manage-profile"} element={<Manage/>} />
-                        <Route path={"/manage-menu"} element={<ManageMenu/>} />
+                        <Route path={"/manage-menu/:truckId"} truckId=":truckId" element={<ManageMenu/>} />
                     </Routes>
                 </BrowserRouter>
             </Provider>
