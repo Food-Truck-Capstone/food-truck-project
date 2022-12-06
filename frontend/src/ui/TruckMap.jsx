@@ -4,10 +4,10 @@ import {Pin} from "./Pin.jsx";
 
 export function TruckMap () {
 
-    const [points] = React.useState([// { lat: 35.332, lng: -106.652 },
-        // { lat: 35.339, lng: -106.656 },
-        // { lat: 35.40, lng: -106.666 },
-        // { lat: 35.23, lng: -106.4444 }
+    const [points] = React.useState([ { lat: 35.140, lng: -106.652 },
+         { lat: 35.130, lng: -106.636 },
+         { lat: 35.110, lng: -106.666 },
+         { lat: 35.100, lng: -106.555 }
     ]);
     return (
         <>
