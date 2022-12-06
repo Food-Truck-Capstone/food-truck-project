@@ -33,12 +33,21 @@ export async function signUpOwnerController (request: Request, response: Respons
 
     const status: Status = {
       status: 200,
-      message: 'ManageProfileData successfully created please check your email.',
+      message: 'Account successfully created please check your email.',
       data: null
     }
 
     return response.json(status)
   } catch (error: any) {
+      if (error.message === "Forbidden") {
+          const status: Status = {
+              status: 200,
+              message: 'Account successfully created.',
+              data: null
+          }
+
+          return response.json(status)
+      }
     const status: Status = {
       status: 500,
       message: error.message,

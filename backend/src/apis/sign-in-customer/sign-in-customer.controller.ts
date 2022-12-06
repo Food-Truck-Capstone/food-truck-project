@@ -6,10 +6,10 @@ import { Customer, selectCustomerByCustomerEmail } from '../../utils/models/Cust
 
 export async function signInCustomerController (request: Request, response: Response): Promise<Response> {
   try {
-    const { customerEmail, customerPassword } = request.body
-    const customer = await selectCustomerByCustomerEmail(customerEmail)
+    const { email, password } = request.body
+    const customer = await selectCustomerByCustomerEmail(email)
 
-    return (customer !== null) && await validatePassword(customer.customerHash, customerPassword)
+    return (customer !== null) && await validatePassword(customer.customerHash, password)
       ? signInSuccessful(request, response, customer)
       : signInFailed(response)
   } catch (error: any) {

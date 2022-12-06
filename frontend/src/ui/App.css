@@ -83,6 +83,12 @@ input:checked + .slider:before {
 }
 
 .add-edit-menu {
-color: blue;
-text-decoration: underline;
+    color: blue;
+    text-decoration: underline;
+}
+
+.navlink {
+    color: blue;
+    text-decoration: underline;
+>>>>>>> reduxlogin
 }

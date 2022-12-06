@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
+import {SignUpFormOwner} from "./SignUpFormOwner.jsx"
 
 export function SignupOwnerModal() {
     const [show, setShow] = useState(false);
@@ -10,7 +10,7 @@ export function SignupOwnerModal() {
     const handleShow = () => setShow(true);
 
     return (
-        <>
+        <div onKeyDown={e => e.stopPropagation()}>
             <Button variant="link" onClick={handleShow}>
                 Truck Owner Sign Up
             </Button>
@@ -20,53 +20,9 @@ export function SignupOwnerModal() {
                     <Modal.Title>Truck Owner Sign Up</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                            <Form.Label>Full Name</Form.Label>
-                            <Form.Control
-                                type="text"
-                                autoFocus
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-                            <Form.Label>Email Address</Form.Label>
-                            <Form.Control
-                                type="email"
-                                autoFocus
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
-                            <Form.Label>Phone Number</Form.Label>
-                            <Form.Control
-                                type="tel"
-                                autoFocus
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control
-                                type="password"
-                                autoFocus
-                            />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-                            <Form.Label>Confirm Password</Form.Label>
-                            <Form.Control
-                                type="password"
-                                autoFocus
-                            />
-                        </Form.Group>
-                    </Form>
+                    <SignUpFormOwner/>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button variant="primary" onClick={handleClose}>
-                        Submit
-                    </Button>
-                    <Button variant="secondary" onClick={handleClose}>
-                        Cancel
-                    </Button>
-                </Modal.Footer>
             </Modal>
-        </>
+        </div>
     );
 }

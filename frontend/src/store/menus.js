@@ -19,6 +19,7 @@ export const {addMenus} = menuSlice.actions
 //     const payload = {menuTruckId, data}
 //     dispatch(addMenus(payload));
 // };
+
 export function fetchAllMenus () {
     return async function (dispatch) {
         const {data} = await httpConfig('/apis/menu')
