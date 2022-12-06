@@ -21,6 +21,8 @@ export function App({store}) {
                         <Route path={"/manage-profile"} element={<Manage/>} />
                         <Route path={"/manage-menu"} element={<ManageMenu/>} />
                         <Route path={"/sign-in"} element={<SignInForm />} />
+
+                        <Route path={"/manage-menu/:truckId"} truckId=":truckId" element={<ManageMenu/>} />
                     </Routes>
                 </BrowserRouter>
             </Provider>
