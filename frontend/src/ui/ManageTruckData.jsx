@@ -2,6 +2,7 @@ import React, {useEffect} from "react"
 import {Col, Container, Form, Row} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
+import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
 export function ManageTruckData({truck}) {
 console.log(truck)
@@ -30,19 +31,16 @@ console.log(truck)
                 </Col>
 
                 <Col md={2} className={"my-auto text-center"}>
-                    <Form>
-                        <Form.Check
-                            type="switch"
-                            id="custom-switch"
-                            label="Check this switch"
-                            defaultChecked={truck.truckCardAccepted ?? 'checked'}
+
+                    <BootstrapSwitchButton
+                    onstyle={"primary"}
+                    offstyle={"secondary"}
+                        onlabel='Yes'
+                        offlabel='No'
+                        checked={truck.truckCardAccepted === 'true'}
                         />
-                    </Form>
-                    <label className="switch">
-                        <input type="checkbox"/>
-                        <span className="slider round"></span>
-                    </label>
                     {truck.truckCardAccepted}
+
                 </Col>
 
                 <Col md={1} className={"text-center"}>
