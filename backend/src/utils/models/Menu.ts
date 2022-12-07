@@ -12,7 +12,7 @@ export interface Menu{
 export async function insertMenu (menu: Menu): Promise<string> {
     const {menuTruckId, menuName, menuPrice, menuDescription, menuImgUrl} = menu
     await sql `INSERT INTO menu (menu_id, menu_truck_id, menu_name, menu_price, menu_description, menu_img_url) VALUES(gen_random_uuid(), ${menuTruckId}, ${menuName}, ${menuPrice}, ${menuDescription}, ${menuImgUrl})`
-    return 'NavigationMenu created successfully'
+    return 'Menu created successfully'
 }
 
 export async function selectAllMenus (): Promise<Menu[]> {

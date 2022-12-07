@@ -32,6 +32,7 @@ export function ManageMenuItems ({menuItem}) {
                     </Form>
                 </Col>
             </Row>
+
         </>
     )
 }
