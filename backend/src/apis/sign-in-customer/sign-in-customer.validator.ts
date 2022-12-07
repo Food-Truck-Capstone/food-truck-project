@@ -1,7 +1,7 @@
 import { Schema } from 'express-validator'
 
 export const signInCustomerValidator: Schema = {
-  customerPassword: {
+  password: {
     isLength: {
       errorMessage: 'Password must be at least eight characters',
       options: { min: 8 }
@@ -9,7 +9,7 @@ export const signInCustomerValidator: Schema = {
     trim: true,
     escape: true
   },
-  customerEmail: {
+  email: {
     isEmail: {
       errorMessage: 'Please provide a valid email'
     },

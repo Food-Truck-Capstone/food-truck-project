@@ -6,10 +6,10 @@ import { Owner, selectOwnerByOwnerEmail } from '../../utils/models/Owner'
 
 export async function signInOwnerController (request: Request, response: Response): Promise<Response> {
   try {
-    const { ownerEmail, ownerPassword } = request.body
-    const owner = await selectOwnerByOwnerEmail(ownerEmail)
+    const { email, password } = request.body
+    const owner = await selectOwnerByOwnerEmail(email)
 
-    return (owner !== null) && await validatePassword(owner.ownerHash, ownerPassword)
+    return (owner !== null) && await validatePassword(owner.ownerHash, password)
       ? signInSuccessful(request, response, owner)
       : signInFailed(response)
   } catch (error: any) {

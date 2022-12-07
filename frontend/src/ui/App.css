@@ -1,0 +1,123 @@
+#SignUpText {
+    height: 75px;
+    margin-top: 20px;
+}
+
+
+#signUpForm {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+#submitButton {
+    width: 100px;
+    margin-top: 600px;
+}
+
+#ownerSubmitButton {
+    width: 100px;
+    margin-top: 1100px;
+    margin-bottom: 200px;
+
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.add-edit-menu {
+    color: #ED5742;
+
+}
+
+.navlink {
+    color: #ED5742 !important;
+}
+
+#NavBarBackground {
+    background-color: whitesmoke;
+    filter: drop-shadow(0 0 0.15rem grey);
+}
+
+#borderEffect {
+    border-color: dimgrey;
+    filter: drop-shadow(0 0 0.15rem grey);
+    background-color: white;
+}
+h1 {
+    color: #ED5742;
+}
+
+#navBarText {
+    color: #ED5742;
+}
+
+.btn-link {
+    color: #ED5742;
+    padding: 0;
+    margin: 16px 0;
+    border: none;
+    text-decoration: none;
+}
+
+#ButtonBackgroundColor {
+    background-color: #ED5742; !important;
+    border: none;
+}
