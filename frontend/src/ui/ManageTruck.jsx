@@ -4,8 +4,7 @@ import Button from "react-bootstrap/Button";
 import {ManageTruckData} from "./ManageTruckData";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllTruck, fetchTrucksByOwnerId} from "../store/truck.js";
-import {fetchAuth} from "../store/auth.js";
-import {ManageMenuItems} from "./ManageMenuItems.jsx";
+
 
 export function ManageTruck() {
     const trucks = useSelector((state) => state.truck ? state.truck : [])
@@ -19,7 +18,7 @@ export function ManageTruck() {
     return (
         <>
             <Container>
-                <Row>
+                <Row  className="mb-3">
                     <Col md={1} className={"text-center"}><h5>Select</h5></Col>
                     <Col md={1} className={"text-center"}><h5>Truck #</h5></Col>
                     <Col md={3} className={"text-center"}><h5>Truck Name</h5></Col>
@@ -32,7 +31,7 @@ export function ManageTruck() {
                 {trucks.map(truck => <ManageTruckData truck={truck} key={truck.truckId}/>)}
 
                 <Col className={"text-center mb-3"}>
-                    <Button href={"#"}>+</Button>
+                    <Button href={"#"} id="ButtonBackgroundColor">+</Button>
                 </Col>
 
             </Container>

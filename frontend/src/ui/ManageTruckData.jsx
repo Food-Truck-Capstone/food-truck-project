@@ -2,13 +2,14 @@ import React, {useEffect} from "react"
 import {Col, Container, Form, Row} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Nav from "react-bootstrap/Nav";
+import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
 export function ManageTruckData({truck}) {
 console.log(truck)
 
     return (
         <>
-            <Row className={"border border-dark rounded-2 mb-2 py-3"}>
+            <Row className={"rounded-2 mb-3 py-3"} id={"borderEffect"}>
                 <Col md={1} className={"my-auto text-center"}>
                     <Form>
                         <Form.Check type="checkbox"/>
@@ -16,7 +17,7 @@ console.log(truck)
                 </Col>
 
                 <Col md={1} className={"my-auto text-center"}>
-                    <p className={"m-0"}>1</p>
+                    {truck.truckId.slice(-4)}
                 </Col>
 
                 <Col md={3} className={"my-auto text-center"}>
@@ -30,19 +31,24 @@ console.log(truck)
                 </Col>
 
                 <Col md={2} className={"my-auto text-center"}>
-                    {/*<label className="switch">*/}
-                    {/*    <input type="checkbox"/>*/}
-                    {/*    <span className="slider round"></sgit pan>*/}
-                    {/*</label>*/}
-                    {truck.truckCardAccepted}
+
+                    <BootstrapSwitchButton
+                        style=""
+                    onstyle={"secondary"}
+                    offstyle={"outline-secondary"}
+                        onlabel='Yes'
+                        offlabel='No'
+                        checked={truck.truckCardAccepted === 'true'}
+                        />
+
                 </Col>
 
                 <Col md={1} className={"text-center"}>
-                    <Button variant="primary">Save</Button>
+                    <Button id="ButtonBackgroundColor">Save</Button>
                 </Col>
 
                 <Col md={2} className={"add-edit-menu my-auto text-center"}>
-                    <Nav.Link href={`manage-menu/${truck.truckId}`}>Add/Edit Menu </Nav.Link>
+                    <Button href={`manage-menu/${truck.truckId}`} id="ButtonBackgroundColor">Manage Menu </Button>
                 </Col>
             </Row>
         </>

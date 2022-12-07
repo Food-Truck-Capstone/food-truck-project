@@ -4,7 +4,7 @@ import {ManageMenuItems} from "./ManageMenuItems";
 import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllMenus} from "../store/menus.js";
-import {TruckBadge} from "./TruckBadge.jsx";
+import {NavigationMenu} from "./NavigationMenu.jsx";
 import Button from "react-bootstrap/Button";
 
 export function ManageMenu() {
@@ -22,6 +22,7 @@ export function ManageMenu() {
 
     return (
         <>
+            <NavigationMenu/>
             <Container>
                 <Row className={"text-center m-5"}><h1>Menu</h1></Row>
                 <Row>
@@ -31,13 +32,16 @@ export function ManageMenu() {
                     <Col md={2} className={"text-center"}><h5>Item Price</h5></Col>
                     <Col md={3} className={"text-center"}><h5>Apply to All Trucks?</h5></Col>
                 </Row>
-                {/*{menus && menus.map((menuItem) => `<p>{{menuItem.name}}</p>`)}*/}
-                {/*{trucks.map((truck, index) =>    <TruckBadge truck={truck} key={index}/>)}*/}
                 {menus.map(menu => <ManageMenuItems menuItem={menu} key={menu.menuId}/>)}
-                <Col className={"text-center mb-3 mt-3"}>
-                    <Button href={"#"}>+</Button>
-                </Col>
+
+                <Row>
+                    <Col className="text-center mt-3">
+                        <Button href={"#"} id="ButtonBackgroundColor">Add Menu Item</Button>
+                    </Col>
+                </Row>
+
             </Container>
+
         </>
     );
 }

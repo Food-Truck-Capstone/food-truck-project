@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import {Col} from "react-bootstrap";
 
 //This page will get the current users data and display it so that they can update it if they need to.
-export function ManageProfileData () {
+export function ManageProfileData ({owner}) {
     return (
         <>
             <Col sm={6} className="mx-auto">
@@ -23,7 +23,7 @@ export function ManageProfileData () {
                         <Form.Control type="email" placeholder="sample@email.com" />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit">
+                    <Button id="ButtonBackgroundColor" type="submit">
                         Edit
                     </Button>
                 </Form>
