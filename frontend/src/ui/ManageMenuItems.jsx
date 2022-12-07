@@ -31,6 +31,7 @@ export function ManageMenuItems ({menuItem}) {
                         <Form.Check type="checkbox"/>
                     </Form>
                 </Col>
+
             </Row>
 
         </>

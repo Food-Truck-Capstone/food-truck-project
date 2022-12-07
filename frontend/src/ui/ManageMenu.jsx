@@ -5,6 +5,7 @@ import {useParams} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllMenus} from "../store/menus.js";
 import {TruckBadge} from "./TruckBadge.jsx";
+import Button from "react-bootstrap/Button";
 
 export function ManageMenu() {
     let { truckId } = useParams();
@@ -33,6 +34,9 @@ export function ManageMenu() {
                 {/*{menus && menus.map((menuItem) => `<p>{{menuItem.name}}</p>`)}*/}
                 {/*{trucks.map((truck, index) =>    <TruckBadge truck={truck} key={index}/>)}*/}
                 {menus.map(menu => <ManageMenuItems menuItem={menu} key={menu.menuId}/>)}
+                <Col className={"text-center mb-3 mt-3"}>
+                    <Button href={"#"}>+</Button>
+                </Col>
             </Container>
         </>
     );
