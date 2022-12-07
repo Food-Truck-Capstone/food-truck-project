@@ -39,7 +39,6 @@ console.log(truck)
                         offlabel='No'
                         checked={truck.truckCardAccepted === 'true'}
                         />
-                    {truck.truckCardAccepted}
 
                 </Col>
 
@@ -48,7 +47,7 @@ console.log(truck)
                 </Col>
 
                 <Col md={2} className={"add-edit-menu my-auto text-center"}>
-                    <Nav.Link href={`manage-menu/${truck.truckId}`}>Manage Menu </Nav.Link>
+                    <Button href={`manage-menu/${truck.truckId}`}>Manage Menu </Button>
                 </Col>
             </Row>
         </>
