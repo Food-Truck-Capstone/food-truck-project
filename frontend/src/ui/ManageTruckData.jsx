@@ -33,8 +33,9 @@ console.log(truck)
                 <Col md={2} className={"my-auto text-center"}>
 
                     <BootstrapSwitchButton
-                    onstyle={"primary"}
-                    offstyle={"secondary"}
+                        style=""
+                    onstyle={"secondary"}
+                    offstyle={"outline-secondary"}
                         onlabel='Yes'
                         offlabel='No'
                         checked={truck.truckCardAccepted === 'true'}

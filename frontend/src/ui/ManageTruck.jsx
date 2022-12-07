@@ -4,8 +4,7 @@ import Button from "react-bootstrap/Button";
 import {ManageTruckData} from "./ManageTruckData";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllTruck, fetchTrucksByOwnerId} from "../store/truck.js";
-import {fetchAuth} from "../store/auth.js";
-import {ManageMenuItems} from "./ManageMenuItems.jsx";
+
 
 export function ManageTruck() {
     const trucks = useSelector((state) => state.truck ? state.truck : [])

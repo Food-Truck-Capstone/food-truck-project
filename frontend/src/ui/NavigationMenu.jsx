@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import {SignupCustomerModal} from "./SignupCustomerModal.jsx";
 import {SignupOwnerModal} from "./SignupOwnerModal.jsx";
-import {NavbarBrand} from "react-bootstrap";
+import image from "../image/food truck no background .png"
 
 export function NavigationMenu () {
     return (
@@ -13,6 +13,13 @@ export function NavigationMenu () {
                 <Container fluid>
                     <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`} />
                     <Navbar.Brand id={"navBarText"}>FOOD BY THE MILE</Navbar.Brand>
+                    <img
+                        src={image}
+                        width="50"
+                        height="30"
+                        className="d-inline-block align-top"
+                        alt="React Bootstrap logo"
+                    />
                     <Navbar.Offcanvas id={`offcanvasNavbar-expand-false`} aria-labelledby={`offcanvasNavbarLabel-expand-false`} placement="start">
                         <Offcanvas.Header closeButton>
                             <Offcanvas.Title id={`offcanvasNavbarLabel-expand-false`}></Offcanvas.Title>
