@@ -39,7 +39,6 @@ console.log(truck)
                         offlabel='No'
                         checked={truck.truckCardAccepted === 'true'}
                         />
-                    {truck.truckCardAccepted}
 
                 </Col>
 
