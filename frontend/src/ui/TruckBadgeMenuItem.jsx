@@ -1,5 +1,6 @@
 import React from "react"
 import {Col, Row} from "react-bootstrap";
+import image from "../image/menu-item-icon.jpg";
 
 
 export function TruckBadgeMenuItem({menu}) {
@@ -16,7 +17,7 @@ export function TruckBadgeMenuItem({menu}) {
                     </Row>
                 </Col>
                 <Col xs={3} className={"my-auto pt-3 pb-3"}>
-                    <img src={"https://placekitten.com/100/100"} className="img-fluid rounded-circle text-center align-items-center" alt="Food Truck Icon"/>
+                    <img src={image} className="img-fluid rounded-circle text-center align-items-center" alt="Menu Item Icon"/>
                 </Col>
             </Row>
         </>

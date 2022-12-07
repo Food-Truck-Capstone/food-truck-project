@@ -12,7 +12,7 @@ export function NavigationMenu () {
             <Navbar key={false} expand={false} className="mb-3" id={"NavBarBackground"}>
                 <Container fluid>
                     <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-false`} />
-                    <Navbar.Brand>FOOD BY THE MILE</Navbar.Brand>
+                    <Navbar.Brand id={"navBarText"}>FOOD BY THE MILE</Navbar.Brand>
                     <Navbar.Offcanvas id={`offcanvasNavbar-expand-false`} aria-labelledby={`offcanvasNavbarLabel-expand-false`} placement="start">
                         <Offcanvas.Header closeButton>
                             <Offcanvas.Title id={`offcanvasNavbarLabel-expand-false`}></Offcanvas.Title>

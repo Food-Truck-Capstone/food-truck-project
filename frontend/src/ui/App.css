@@ -95,6 +95,7 @@ input:checked + .slider:before {
 
 #NavBarBackground {
     background-color: whitesmoke;
+    filter: drop-shadow(0 0 0.15rem grey);
 }
 
 #borderEffect {
@@ -106,5 +107,7 @@ h1 {
     color: #ED5742;
 }
 
-
+#navBarText {
+    color: #ED5742;
+}
 
