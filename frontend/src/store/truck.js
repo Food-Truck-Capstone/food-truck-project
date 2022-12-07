@@ -19,3 +19,14 @@ export function fetchAllTruck () {
         dispatch(setAllTruck(data))
     }
 }
+export function fetchTrucksByOwnerId () {
+    return async function (dispatch, getState) {
+        const auth = getState().auth
+        console.log(auth)
+        if (auth?.ownerId !== undefined) {
+            const {data} = await httpConfig(`/apis/truck/truckOwnerId/${auth.ownerId}`)
+
+            dispatch(setAllTruck(data))
+        }
+    }
+}

@@ -1,9 +1,21 @@
-import React from "react"
+import React, {useEffect} from "react"
 import {Col, Container, Form, Row} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import {ManageTruckData} from "./ManageTruckData";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAllTruck, fetchTrucksByOwnerId} from "../store/truck.js";
+import {fetchAuth} from "../store/auth.js";
+import {ManageMenuItems} from "./ManageMenuItems.jsx";
 
 export function ManageTruck() {
+    const trucks = useSelector((state) => state.truck ? state.truck : [])
+    const dispatch = useDispatch()
+    const initialEffects = () => {
+
+        dispatch(fetchTrucksByOwnerId())
+    }
+    console.log(trucks)
+    useEffect(initialEffects, [dispatch])
     return (
         <>
             <Container>
@@ -17,13 +29,12 @@ export function ManageTruck() {
                     <Col md={2} className={"menu text-center"}><h5>Menu</h5></Col>
                 </Row>
 
-                {/*Insert ManageTruckData component here for the number of trucks the owner has.*/}
-                <ManageTruckData truckId="56009db2-ccc2-42bd-90eb-827b5cb65fc4"/>
-                <ManageTruckData/>
+                {trucks.map(truck => <ManageTruckData truck={truck} key={truck.truckId}/>)}
 
                 <Col className={"text-center mb-3"}>
                     <Button href={"#"}>+</Button>
                 </Col>
+
             </Container>
         </>
     )
