@@ -30,10 +30,18 @@ console.log(truck)
                 </Col>
 
                 <Col md={2} className={"my-auto text-center"}>
-                    {/*<label className="switch">*/}
-                    {/*    <input type="checkbox"/>*/}
-                    {/*    <span className="slider round"></sgit pan>*/}
-                    {/*</label>*/}
+                    <Form>
+                        <Form.Check
+                            type="switch"
+                            id="custom-switch"
+                            label="Check this switch"
+                            defaultChecked={truck.truckCardAccepted ?? 'checked'}
+                        />
+                    </Form>
+                    <label className="switch">
+                        <input type="checkbox"/>
+                        <span className="slider round"></span>
+                    </label>
                     {truck.truckCardAccepted}
                 </Col>
 
