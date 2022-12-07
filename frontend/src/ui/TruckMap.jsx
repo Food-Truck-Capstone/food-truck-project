@@ -13,7 +13,7 @@ export function TruckMap () {
         <>
             <Map
                 initialViewState={{
-                    latitude: 35.15, longitude: -106.65, zoom: 10
+                    latitude: 35.15, longitude: -106.65, zoom: 11
                 }}
                 style={{width: '100%', height: '90vh'}}
                 mapStyle="mapbox://styles/mapbox/satellite-streets-v12"

@@ -17,7 +17,7 @@ export function Pin(props) {
                 viewBox="0 0 24 24"
                 style={{
                     cursor: 'pointer',
-                    fill: '#d00',
+                    fill: '#ED5742',
                     stroke: 'none',
                     transform: `translate(${-SIZE / 2}px,${-SIZE}px)`
                 }}
