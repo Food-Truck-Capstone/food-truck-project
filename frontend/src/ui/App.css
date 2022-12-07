@@ -92,3 +92,19 @@ input:checked + .slider:before {
     text-decoration: underline;
 >>>>>>> reduxlogin
 }
+
+#NavBarBackground {
+    background-color: whitesmoke;
+}
+
+#borderEffect {
+    border-color: dimgrey;
+    filter: drop-shadow(0 0 0.15rem grey);
+    background-color: white;
+}
+h1 {
+    color: #ED5742;
+}
+
+
+

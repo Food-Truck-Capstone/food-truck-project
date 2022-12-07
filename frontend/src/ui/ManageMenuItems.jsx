@@ -7,7 +7,7 @@ export function ManageMenuItems ({menuItem}) {
 
     return (
         <>
-            <Row className={"border border-dark rounded-2 py-3 mt-0"}>
+            <Row className={"rounded-2 py-3 mt-3"} id="borderEffect">
                 <Col md={1} className={"my-auto text-center"}>
                     <Form>
                         <Form.Check type="checkbox"/>

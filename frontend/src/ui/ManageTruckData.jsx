@@ -8,7 +8,7 @@ console.log(truck)
 
     return (
         <>
-            <Row className={"border border-dark rounded-2 mb-2 py-3"}>
+            <Row className={"rounded-2 mb-3 py-3"} id={"borderEffect"}>
                 <Col md={1} className={"my-auto text-center"}>
                     <Form>
                         <Form.Check type="checkbox"/>

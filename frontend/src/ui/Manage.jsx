@@ -4,6 +4,7 @@ import {ManageTruck} from "./ManageTruck.jsx";
 import {ManageProfileData} from "./ManageProfileData.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAuth} from "../store/auth.js";
+import {NavigationMenu} from "./NavigationMenu.jsx";
 
 //This is where the users profile data will get populated.
 export function Manage () {
@@ -12,6 +13,7 @@ export function Manage () {
     React.useEffect(() => {dispatch(fetchAuth())})
     return (
         <>
+            <NavigationMenu/>
             {/*This is the Manage Profile Section*/}
             <Container className="justify-content-center">
                 <Row className="text-center my-3">
@@ -25,7 +27,7 @@ export function Manage () {
                 {/*This is the Manage Trucks Section*/}
                 <Row className="text-center my-3">
                     <Col className={"m-5"}>
-                        <h1>My Truck(s)</h1>
+                        <h1>Manage Trucks</h1>
                     </Col>
                 </Row>
                 <Row>

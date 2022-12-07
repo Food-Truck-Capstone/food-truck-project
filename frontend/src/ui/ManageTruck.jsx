@@ -19,7 +19,7 @@ export function ManageTruck() {
     return (
         <>
             <Container>
-                <Row>
+                <Row  className="mb-3">
                     <Col md={1} className={"text-center"}><h5>Select</h5></Col>
                     <Col md={1} className={"text-center"}><h5>Truck #</h5></Col>
                     <Col md={3} className={"text-center"}><h5>Truck Name</h5></Col>
