@@ -29,7 +29,6 @@ export function TruckBadge ({truck}) {
                        <Col>
                            <h3>{truck.truckName}</h3>
                            <h5>{truck.truckFoodType}</h5>
-                           <h5>1.1 Miles Away</h5>
                        </Col>
                    </Row>
                </Col>
