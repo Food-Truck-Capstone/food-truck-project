@@ -47,7 +47,7 @@ console.log(truck)
                 </Col>
 
                 <Col md={2} className={"add-edit-menu my-auto text-center"}>
-                    <Button href={`manage-menu/${truck.truckId}`}>Manage Menu </Button>
+                    <Button href={`manage-menu/${truck.truckId}`}>Add/Edit Menu </Button>
                 </Col>
             </Row>
         </>
