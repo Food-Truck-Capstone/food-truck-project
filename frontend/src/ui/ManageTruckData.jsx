@@ -16,7 +16,7 @@ console.log(truck)
                 </Col>
 
                 <Col md={1} className={"my-auto text-center"}>
-                    <p className={"m-0"}>1</p>
+                    {truck.truckId.slice(-4)}
                 </Col>
 
                 <Col md={3} className={"my-auto text-center"}>
@@ -42,7 +42,7 @@ console.log(truck)
                 </Col>
 
                 <Col md={2} className={"add-edit-menu my-auto text-center"}>
-                    <Nav.Link href={`manage-menu/${truck.truckId}`}>Add/Edit Menu </Nav.Link>
+                    <Nav.Link href={`manage-menu/${truck.truckId}`}>Manage Menu </Nav.Link>
                 </Col>
             </Row>
         </>
