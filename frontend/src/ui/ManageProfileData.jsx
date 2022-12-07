@@ -23,7 +23,7 @@ export function ManageProfileData ({owner}) {
                         <Form.Control type="email" placeholder="sample@email.com" />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit">
+                    <Button id="ButtonBackgroundColor" type="submit">
                         Edit
                     </Button>
                 </Form>

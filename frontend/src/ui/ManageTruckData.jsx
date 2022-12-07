@@ -43,11 +43,11 @@ console.log(truck)
                 </Col>
 
                 <Col md={1} className={"text-center"}>
-                    <Button variant="primary">Save</Button>
+                    <Button id="ButtonBackgroundColor">Save</Button>
                 </Col>
 
                 <Col md={2} className={"add-edit-menu my-auto text-center"}>
-                    <Button href={`manage-menu/${truck.truckId}`}>Add/Edit Menu </Button>
+                    <Button href={`manage-menu/${truck.truckId}`} id="ButtonBackgroundColor">Manage Menu </Button>
                 </Col>
             </Row>
         </>

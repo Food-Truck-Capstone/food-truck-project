@@ -20,8 +20,8 @@ export function NavigationMenu () {
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
                                 <Nav.Link className={"navlink"} href="/">Home</Nav.Link>
-                                <Nav.Link><SignupCustomerModal/></Nav.Link>
-                                <Nav.Link><SignupOwnerModal/></Nav.Link>
+                                <SignupCustomerModal/>
+                                <SignupOwnerModal/>
                                 <Nav.Link className={"navlink"} href="sign-in">Sign In</Nav.Link>
                                 <Nav.Link className={"navlink"}  href="manage-profile">Manage Profile </Nav.Link>
                             </Nav>

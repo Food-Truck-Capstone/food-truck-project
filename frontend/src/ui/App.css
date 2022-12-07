@@ -83,14 +83,12 @@ input:checked + .slider:before {
 }
 
 .add-edit-menu {
-    color: blue;
-    text-decoration: underline;
+    color: #ED5742;
+
 }
 
 .navlink {
-    color: blue;
-    text-decoration: underline;
->>>>>>> reduxlogin
+    color: #ED5742 !important;
 }
 
 #NavBarBackground {
@@ -111,3 +109,15 @@ h1 {
     color: #ED5742;
 }
 
+.btn-link {
+    color: #ED5742;
+    padding: 0;
+    margin: 16px 0;
+    border: none;
+    text-decoration: none;
+}
+
+#ButtonBackgroundColor {
+    background-color: #ED5742; !important;
+    border: none;
+}

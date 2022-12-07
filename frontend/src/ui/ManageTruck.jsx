@@ -32,7 +32,7 @@ export function ManageTruck() {
                 {trucks.map(truck => <ManageTruckData truck={truck} key={truck.truckId}/>)}
 
                 <Col className={"text-center mb-3"}>
-                    <Button href={"#"}>+</Button>
+                    <Button href={"#"} id="ButtonBackgroundColor">+</Button>
                 </Col>
 
             </Container>
