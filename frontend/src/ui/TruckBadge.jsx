@@ -9,14 +9,12 @@ import {fetchAllMenus} from "../store/menus.js";
 
 export function TruckBadge ({truck}) {
     const menus = useSelector(state => {
-        console.log(state.menus)
         if (state.menus[truck.truckId] === undefined) {
             return []
         } else {
             return state.menus[truck.truckId]
         }
     })
-    console.log(menus)
 
     return(
        <>

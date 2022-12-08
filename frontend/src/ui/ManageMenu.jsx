@@ -17,8 +17,6 @@ export function ManageMenu() {
     }
     useEffect(initialEffects, [dispatch])
 
-    console.log(menus)
-
 
     return (
         <>

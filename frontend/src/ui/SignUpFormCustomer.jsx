@@ -5,7 +5,6 @@ import {Formik} from "formik";
 import {DisplayError} from "./DisplayError.jsx";
 import {DisplayStatus} from "./DisplayStatus.jsx";
 import { Button, Form, FormControl, InputGroup } from 'react-bootstrap'
-import {FormDebugger} from "./FormDebugger.jsx";
 
 export const SignUpFormCustomer = () => {
     const signUp = {
@@ -170,7 +169,6 @@ function  SignUpFormContent(props){
                     </Button>
                 </Form.Group>
             </Form>
-            {/*<FormDebugger{...props}/>*/}
             <DisplayStatus status={status} />
 
         </>

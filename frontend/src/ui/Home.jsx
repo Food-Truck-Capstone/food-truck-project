@@ -20,8 +20,6 @@ export function Home() {
     }
     useEffect(initialEffects, [dispatch])
 
-    console.log(trucks)
-
 
     return (
         <>

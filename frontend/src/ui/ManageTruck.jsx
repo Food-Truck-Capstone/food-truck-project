@@ -13,7 +13,6 @@ export function ManageTruck() {
 
         dispatch(fetchTrucksByOwnerId())
     }
-    console.log(trucks)
     useEffect(initialEffects, [dispatch])
     return (
         <>

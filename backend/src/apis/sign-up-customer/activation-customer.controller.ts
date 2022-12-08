@@ -6,7 +6,6 @@ export async function activationCustomerController (request: Request, response: 
     try {
         const { activation } = request.params
         const customer = await selectCustomerByCustomerActivationToken(activation)
-        console.log(customer)
 
         const activationFailed = (): Response => response.json({
             status: 400,
@@ -16,7 +15,7 @@ export async function activationCustomerController (request: Request, response: 
 
         const activationSucceeded = async (customer: Customer): Promise<Response> => {
             const updatedCustomer = { ...customer, customerActivationToken: null }
-            console.log(updatedCustomer)
+
             await updateCustomer(updatedCustomer)
             return response.json({
                 status: 200,

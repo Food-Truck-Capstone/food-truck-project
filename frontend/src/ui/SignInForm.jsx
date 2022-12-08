@@ -6,7 +6,6 @@ import React from "react";
 import {getAuth} from "../store/auth.js";
 import {httpConfig} from "../utils/http-config.js";
 import {Formik} from "formik";
-import {FormDebugger} from "./FormDebugger.jsx";
 import {Button} from "react-bootstrap";
 import {DisplayStatus} from "./DisplayStatus.jsx";
 import {DisplayError} from "./DisplayError.jsx";
@@ -62,7 +61,6 @@ export function SignInFormContent(props){
             <DisplayError errors={errors} touched={touched} field={'isOwner'}/>
         </Form>
         <DisplayStatus status={status}/>
-        {/*<FormDebugger{...props}/>*/}
     </>)
 }
 

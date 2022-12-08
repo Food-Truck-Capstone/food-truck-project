@@ -5,7 +5,6 @@ import Nav from "react-bootstrap/Nav";
 import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 
 export function ManageTruckData({truck}) {
-console.log(truck)
 
     return (
         <>

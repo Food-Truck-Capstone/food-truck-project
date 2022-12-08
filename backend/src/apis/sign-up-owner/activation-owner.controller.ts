@@ -6,7 +6,6 @@ export async function activationOwnerController (request: Request, response: Res
     try {
         const { activation } = request.params
         const owner = await selectOwnerByOwnerActivationToken(activation)
-        console.log(owner)
 
         const activationFailed = (): Response => response.json({
             status: 400,
@@ -16,7 +15,6 @@ export async function activationOwnerController (request: Request, response: Res
 
         const activationSucceeded = async (owner: Owner): Promise<Response> => {
             const updatedOwner = { ...owner, ownerActivationToken: null }
-            console.log(updatedOwner)
             await updateOwner(updatedOwner)
             return response.json({
                 status: 200,
